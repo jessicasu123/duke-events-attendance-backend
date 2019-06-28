@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscribable_id: 1
+  subscribable_type: MyString
+
+two:
+  subscribable_id: 1
+  subscribable_type: MyString
