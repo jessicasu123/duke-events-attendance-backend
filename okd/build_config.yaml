@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: events-attendance-backend-test-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: events-attendance-backend-test:latest
+  source:
+    contextDir: /
+    git:
+      ref: master
+      uri: 'git@gitlab.oit.duke.edu:ahw26/events_attendance_backend.git'
+    sourceSecret:
+      name: gitlabdeploykey
+    type: Git
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+      noCache: true
+    type: Docker
