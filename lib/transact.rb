@@ -44,4 +44,26 @@ class Transact
 
 		status
 	end
+
+	def self.createDukeCardXML(dukecard_number)
+    	# file = File.open('example.xml')
+    	# doc = Nokogiri::XML(file)
+    	# element = doc.at('//card_number')
+    	# element.content = dukecard_number
+    	# puts doc
+    	# doc
+
+    	xml = "<transaction>
+    		<command_type>4</command_type>
+    		<register_number>24810</register_number>
+    		<card_info>
+    		<card_number>#{dukecard_number}</card_number>
+    		<expr_date>1001</expr_date><pin />
+    		</card_info><amount>0</amount><tender_info>
+    		<tender_key>STATUS</tender_key>
+    		<tender_deposit_key>01</tender_deposit_key>
+    		</tender_info>
+    	</transaction>"
+    	xml
+    end
 end

@@ -1,6 +1,16 @@
 class AttendeesController < ApplicationController
 	skip_before_action :verify_authenticity_token 
 
+	def getAttendees
+		@event = Event.find_by_eventid(params[:eventid])
+		if !@event.blank?
+			@attendees = @event.attendees
+			render json: @attendees
+		else 
+			render :status => "400", :json => {:status => "Invalid Event ID"}.to_json
+		end
+	end
+
 	def checkin
 		#when attendee "checks in" to the event, attendee is validated through
 		#transact and added to that event's subscription

@@ -66,3 +66,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Nokogiri gem for XML parsing
 gem 'nokogiri'
+
+#GraphQL
+gem 'graphql'
+
+gem 'graphiql-rails', group: :development
