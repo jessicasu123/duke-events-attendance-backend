@@ -10,8 +10,8 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 
-RUN chown -R 777 /app/tmp/
-RUN chmod -R go+w /app/tmp/
+#RUN chmod -R go+w /app/tmp/
+RUN chmod -R 777 /app/tmp/
 
 RUN gem install bundler
 
