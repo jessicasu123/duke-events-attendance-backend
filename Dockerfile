@@ -19,6 +19,7 @@ RUN rake assets:precompile
 # Expose port
 EXPOSE 3000
 
+RUN chmod -R 777 /app/db/
 RUN chmod -R 777 /app/tmp/
 RUN chmod -R 777 log
 
