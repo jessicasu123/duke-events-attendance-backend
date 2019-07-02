@@ -7,10 +7,10 @@ RUN mkdir /app
 
 #RUN adduser -S -D -H -h /app rubyuser
 
-RUN chmod -R go+w /app
-
 ADD . /app
 WORKDIR /app
+
+RUN chmod -R go+w /app
 
 RUN gem install bundler
 
