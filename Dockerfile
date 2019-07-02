@@ -7,7 +7,7 @@ RUN mkdir /app
 
 #RUN adduser -S -D -H -h /app rubyuser
 
-RUN chmod go+w /app
+RUN chmod -R go+w /app
 
 ADD . /app
 WORKDIR /app
