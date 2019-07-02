@@ -5,7 +5,7 @@ RUN apt-get install -y nodejs curl git postgresql
 
 RUN mkdir /app
 
-RUN adduser -S -D -H -h /app rubyuser
+#RUN adduser -S -D -H -h /app rubyuser
 
 RUN chmod go+w /app
 
@@ -21,8 +21,8 @@ RUN rake assets:precompile
 # Expose port
 EXPOSE 3000
 
-RUN chmod -R 777 log
+#RUN chmod -R 777 log
 
-USER rubyuser
+#USER rubyuser
 
 CMD ["puma","-C","config/puma.rb"]
