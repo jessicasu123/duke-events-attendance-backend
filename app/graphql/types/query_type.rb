@@ -14,6 +14,17 @@ module Types
       @event.attendees
     end
 
+    field :host_events, [EventType], null: false do
+      description "Returns all events for a particular host by host id"
+      argument :id, ID, required: true
+    end
+
+    def host_events(id:)
+      @host = Host.find_by_hostid(id)
+      @host.events
+    end
+
+
 
   end
 end

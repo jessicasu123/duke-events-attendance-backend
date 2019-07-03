@@ -18,9 +18,12 @@ class SubscriptionTest < ActiveSupport::TestCase
 	  #assert_equal(true, true)  
   end
 
+
   test "belongs to an event" do
   	event = Event.new
   	subscription = Subscription.new(event: event)
   	assert_equal(subscription.event, event)
   end
+
+
 end

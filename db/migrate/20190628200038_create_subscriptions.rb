@@ -4,6 +4,9 @@ class CreateSubscriptions < ActiveRecord::Migration[5.2]
       t.integer :subscribable_id
       t.string :subscribable_type
 
+      t.integer :subscriber_id
+      t.string :subscriber_type
+
       t.timestamps
     end
   end
