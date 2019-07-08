@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   post 'attendees' => 'attendees#getAttendees', as: :getAttendees
 
   get 'attendees' => 'attendees#index', as: :index
-  get 'attendees/:id' => 'attendees#show', as: :attendeeP
+  get 'attendees/:id' => 'attendees#show', as: :attendee
 end
