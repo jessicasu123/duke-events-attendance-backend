@@ -7,8 +7,6 @@ RUN mkdir /app
 
 RUN adduser -S -D -H -h /app rubyuser
 
-RUN chmod go+w /app
-
 ADD . /app
 WORKDIR /app
 
@@ -21,6 +19,8 @@ RUN rake assets:precompile
 # Expose port
 EXPOSE 3000
 
+RUN chmod -R 777 /app/db/
+RUN chmod -R 777 /app/tmp/
 RUN chmod -R 777 log
 
 USER rubyuser

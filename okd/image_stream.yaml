@@ -1,0 +1,19 @@
+{
+   "kind": "ImageStream",
+   "apiVersion": "v1",
+   "metadata": {
+      "name": "events-attendance-backend-test",            
+      "labels": {
+         "application": "events-attendance-backend-test"   
+      }
+   },
+   "spec": {                         
+      "dockerImageRepository": "",   
+      "tags": [                      
+         {
+            "name": "latest"
+         }
+      ]
+   }
+}
+

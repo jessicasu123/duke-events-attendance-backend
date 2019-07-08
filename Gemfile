@@ -59,7 +59,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For security
 gem 'dotenv-rails', groups: [:development, :test]
@@ -71,5 +71,3 @@ gem 'nokogiri'
 gem 'graphql'
 
 gem 'graphiql-rails', group: :development
-
-gem 'webpacker', github: 'rails/webpacker'
