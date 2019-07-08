@@ -1,0 +1,39 @@
+
+<p>
+	<strong> Event:</strong>
+	<%= @event.eventid %>
+</p>
+
+<p>
+	<strong> Date:</strong>
+	<%= @event.created_at.strftime("%B %d, %Y") %>
+
+</p>
+
+<p>
+	<strong> Start Check-In Time: </strong>
+	<%= @event.created_at.strftime("%I:%M %p") %> 
+</p>
+
+<p> 
+	<strong> Attendee Data: </strong>
+	<table>
+		<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
+		<tr>
+			<th style = "background-color: grey">Attendee</th>
+			<th style = "background-color: grey">Check-in Time</th>
+			
+		</tr>
+
+		<!-- <%= @event.attendees.each do |attendee| %> -->
+			<tr> 
+				<!-- <td> <%= attendee.duid %></td> --> 
+				<td> <%= link_to attendee.duid, attendee_path(attendee) %></td>
+				<td> <%= attendee.created_at.strftime("%I:%M %p") %></td> 
+			</tr>
+		<!-- <% end %> -->
+
+	</table>
+</p>
+<!--  <%= render @event.attendees %> -->
+

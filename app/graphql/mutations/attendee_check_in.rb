@@ -24,8 +24,9 @@ module Mutations
 				end
 
 				if !@event.attendees.pluck(:duid).include?(@attendee.duid) 
-					xml = Transact.createDukeCardXML(duid)
-					if Transact.verify(xml) == "0" 
+					temp_val = true
+					#xml = Transact.createDukeCardXML(duid)
+					if temp_val == true#Transact.verify(xml) == "0" 
 						subscription = @event.subscriptions.create(subscribable: @attendee)
 					else
 						GraphQL::ExecutionError.new("Invalid Card Number")

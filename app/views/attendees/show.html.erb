@@ -1,0 +1,30 @@
+<h1> Attendance Report </h1>
+
+<p>
+	<strong> For Attendee:</strong>
+	<%= @attendee.duid %>
+</p>
+
+<p> 
+	<table>
+	<!-- <%= render @attendee.events %> --> 
+		<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
+		<tr>
+			<th style = "background-color: grey">Event</th>
+			<th style = "background-color: grey">Date</th>
+			
+		</tr>
+
+		
+		<!-- <%= @attendee.events.each do |event| %> -->
+			<tr> 
+				<td> <%= event.eventid %></td> 
+				
+				<td> <%= event.created_at.strftime("%B %d, %Y") %></td> 
+			</tr>
+		<!-- <% end %> --> 
+		
+
+
+	</table>
+</p>
