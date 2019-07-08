@@ -1,6 +1,15 @@
 class HostsController < ApplicationController
 skip_before_action :verify_authenticity_token 
 
+
+	def index 
+		@hosts = Host.all 
+	end 
+
+	def show 
+		@host = Host.find(params[:id])
+	end
+	
 	def checkin
 		#when host "checks in" to the event, that event is created and 
 		#subscription to the event for the host is created

@@ -1,5 +1,17 @@
 class AttendeesController < ApplicationController
 	skip_before_action :verify_authenticity_token 
+	
+	def index 
+		@attendees = Attendee.all 
+	end 
+
+	def show 
+		@attendee = Attendee.find(params[:id])
+	end
+
+	def new 
+		@attendee = Attendee.new 
+	end
 
 	def getAttendees
 		@event = Event.find_by_eventid(params[:eventid])
@@ -16,6 +28,7 @@ class AttendeesController < ApplicationController
 		#transact and added to that event's subscription
 		xml = createDukeCardXML(params[:duid])
 		@event = Event.find_by_eventid(params[:eventid])
+		
         if !@event.blank?
         	if !params[:duid].blank?
 				if Transact.verify(xml) == "0" 

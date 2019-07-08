@@ -24,6 +24,26 @@ module Types
       @host.events
     end
 
+    field :all_hosts, [HostType], null: false do 
+      description "Returns all the hosts for a particular event"
+      argument :id, ID, required: true 
+    end 
+
+    def all_hosts(id:)
+      @event = Event.find_by_eventid(id)
+      @event.hosts
+    end 
+
+    field :attendee_events, [EventType], null: false do 
+      description "Returns all events for a particular attendee by duid"
+      argument :id, ID, required: true 
+    end 
+
+    def attendee_events(id:)
+      @attendee = Attendee.find_by_duid(id)
+      @attendee.events 
+    end 
+
 
     field :attendee_events, [EventType], null: false do
       description "Returns all events for a particular attendee by duid"

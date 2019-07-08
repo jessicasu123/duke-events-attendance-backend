@@ -1,0 +1,43 @@
+
+<p>
+	<strong> Event:</strong>
+	<%= @event.eventid %>
+</p>
+
+<p>
+	<strong> Date:</strong>
+	<%= @event.created_at.strftime("%B %d, %Y") %>
+
+</p>
+
+<p>
+	<strong> Start Check-In Time: </strong>
+	<%= @event.created_at.strftime("%I:%M %p") %> 
+</p>
+
+<p> 
+	<strong> Attendee Data: </strong>
+	<table>
+		<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
+		<tr>
+			<th style = "background-color: grey">Attendee</th>
+			<th style = "background-color: grey">Check-in Time</th>
+			
+		</tr>
+
+
+		<% @event.subscriptions.each do |subscription| %> 
+			<tr> 
+				<% if subscription.subscribable_type == 'Attendee' %>
+					<td>  <%= link_to Attendee.find(subscription.subscribable_id).duid, attendee_path(Attendee.find(subscription.subscribable_id)) %> </td>
+					<td> <%= subscription.created_at.strftime("%I:%M %p") %> </td>
+
+				<% end %>
+
+			</tr>
+		<% end %>
+
+	</table>
+</p>
+ <%# render @event.attendees %> 
+

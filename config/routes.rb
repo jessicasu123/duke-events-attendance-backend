@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   get '/hosts/:id', to: 'hosts#show', as: 'host'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # post 'host_checkin' => 'hosts#checkin',  as: :host_checkin
-  # post 'attendee_checkin' => 'attendees#checkin', as: :attendee_checkin
-  # post 'attendees' => 'attendees#getAttendees', as: :getAttendees
+  resources :events
+
+  post 'host_checkin' => 'hosts#checkin',  as: :host_checkin
+  post 'attendee_checkin' => 'attendees#checkin', as: :attendee_checkin
+  post 'attendees' => 'attendees#getAttendees', as: :getAttendees
+
+  get 'attendees' => 'attendees#index', as: :index
+  get 'attendees/:id' => 'attendees#show', as: :attendee
 end

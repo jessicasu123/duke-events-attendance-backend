@@ -1,15 +1,23 @@
 <h1>All Events</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>ID</th>
-    <th>Attendees</th>
-  </tr>
- 
-  <% Event.all.each do |event| %>
-    <tr>
-      <td><%= event.eventid %></td>
-    </tr>
-  <% end %>
+	<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
+	<tr>
+		<th style = "background-color: grey">Title</th>
+		<th style = "background-color: grey">Date</th>
+		<th style = "background-color: grey">Hosts</th>
+		<th style = "background-color: grey">Number of Attendees</th>
+		<th style = "background-color: grey">Attendees</th>
+		
+	</tr>
+
+	<% @events.each do |event| %>
+		<tr> 
+			<td> <%= event.eventid %></td>
+			<td> <%= event.created_at.strftime("%B %d, %Y") %></td>
+			<td><%= render event.hosts %></td>
+			<td> <%= event.attendees.count %></td>
+			<td><%= link_to 'Show Details', event_path(event) %></td>
+		</tr>
+	 <% end %> 
 </table>
