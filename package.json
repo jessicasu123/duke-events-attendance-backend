@@ -1,5 +1,7 @@
 {
   "name": "TestSubscription",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "react-apollo-form": "^0.1.8"
+  },
 }

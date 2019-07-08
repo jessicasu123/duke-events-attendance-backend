@@ -1,0 +1,15 @@
+<h1>All Events</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>ID</th>
+    <th>Attendees</th>
+  </tr>
+ 
+  <% Event.all.each do |event| %>
+    <tr>
+      <td><%= event.eventid %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,19 @@
+<h1>All Hosts</h1>
+
+
+
+<table>
+  <tr>
+    <th>Hosts</th>
+    <th>Event Count</th>
+    <th>Events</th>
+  </tr>
+ 
+  <% Host.all.each do |host| %>
+    <tr>
+      <td><%= host.hostid %></td>
+      <td class="count"><%= host.events.count %></td>
+      <td><%= link_to "See Events", host_path(host) %></td>
+    </tr>
+  <% end %>
+</table>

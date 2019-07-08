@@ -71,3 +71,5 @@ gem 'nokogiri'
 gem 'graphql'
 
 gem 'graphiql-rails', group: :development
+
+gem 'webpacker', github: 'rails/webpacker'

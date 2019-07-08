@@ -20,4 +20,8 @@ skip_before_action :verify_authenticity_token
 
 	end
 
+	def show
+		@host = Host.find(params[:id])
+	end
+
 end
