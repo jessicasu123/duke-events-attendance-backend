@@ -1,6 +1,7 @@
 class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token 
   def execute
+    puts "REQUEST HEADERS: #{request.headers.inspect}"
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]

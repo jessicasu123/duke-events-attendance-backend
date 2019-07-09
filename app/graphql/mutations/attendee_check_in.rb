@@ -8,6 +8,15 @@ module Mutations
 		type Types::HostType
 
 		def resolve(eventid:nil, duid:nil)
+			
+			#puts request.headers.inspect
+
+			# duid = request.headers['duid']
+			# duid to idms web services
+			# get attributes (DukeCardNumber, First Name, LastName)
+
+			
+
 			#add validation code
 			@event = Event.find_by_eventid(eventid)
 			@attendee = Attendee.find_by_duid(duid)
