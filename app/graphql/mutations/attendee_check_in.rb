@@ -9,7 +9,7 @@ module Mutations
 
 		def resolve(eventid:nil, duid:nil)
 			
-			puts request.headers.inspect
+			#puts request.headers.inspect
 
 			# duid = request.headers['duid']
 			# duid to idms web services
