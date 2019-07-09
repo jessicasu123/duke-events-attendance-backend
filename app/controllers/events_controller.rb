@@ -10,4 +10,11 @@ class EventsController < ApplicationController
 	def new 
 		@event = Event.new 
 	end
+
+
+	def destroy
+  		@event = Event.find(params[:id])
+  		@event.destroy
+  
+	end
 end
