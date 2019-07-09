@@ -7,7 +7,7 @@ module Mutations
 
 		type Types::HostType
 
-		puts "HERE"
+		
 		@cardnumber = Idmws.getCardNumber($uniqueID)
 		puts @cardnumber
 

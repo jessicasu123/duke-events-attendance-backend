@@ -4,6 +4,7 @@ class GraphqlController < ApplicationController
 
     val = eval( request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'] )
     $uniqueID = val[:dukeUniqueID]
+    puts $uniqueID
 
     variables = ensure_hash(params[:variables])
     query = params[:query]
