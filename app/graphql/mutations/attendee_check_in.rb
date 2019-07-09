@@ -7,6 +7,10 @@ module Mutations
 
 		type Types::HostType
 
+		puts "HERE"
+		@cardnumber = Idmws.getCardNumber($uniqueID)
+		puts @cardnumber
+
 		def resolve(eventid:nil, duid:nil)
 			
 			#puts request.headers.inspect
@@ -20,6 +24,8 @@ module Mutations
 			#add validation code
 			@event = Event.find_by_eventid(eventid)
 			@attendee = Attendee.find_by_duid(duid)
+			# @cardnumber = Idmws.get_card_number($uniqueID)
+			# puts @cardnumber
 
 			#throw error if event isn't available for check-in yet
 			if @event.blank?
