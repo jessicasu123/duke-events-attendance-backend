@@ -55,6 +55,14 @@ module Types
       @attendee.events
     end
 
+    field :get_duke_card_number, String, null: false do
+      description "Returns duke card number by duke unique id"
+    end
+
+    def get_duke_card_number()
+      Idmws.getCardNumber($uniqueID)[0]
+    end
+
 
 
   end
