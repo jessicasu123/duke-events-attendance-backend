@@ -4,5 +4,6 @@ module Types
 		field :eventid, String, null:false
 		field :hosts, [HostType], null:false 
 		field :attendees, [AttendeeType], null:false
+		field :title, String, null:false
 	end
 end

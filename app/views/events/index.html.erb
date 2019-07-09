@@ -4,6 +4,7 @@
 	<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
 	<tr>
 		<th style = "background-color: grey">Title</th>
+		<th style = "background-color: grey">ID</th>
 		<th style = "background-color: grey">Date</th>
 		<th style = "background-color: grey">Hosts</th>
 		<th style = "background-color: grey">Number of Attendees</th>
@@ -13,9 +14,12 @@
 
 	<% @events.each do |event| %>
 		<tr> 
+			<td> <%=event.title %></td>
 			<td> <%= event.eventid %></td>
 			<td> <%= event.created_at.strftime("%B %d, %Y") %></td>
-			<td><%= render event.hosts %></td>
+			<% event.hosts.each do |host| %>
+				<td><%= link_to host.hostid, host_path(host) %></td>
+			<% end %>
 			<td> <%= event.attendees.count %></td>
 			<td><%= link_to 'Show Details', event_path(event) %></td>
 		</tr>

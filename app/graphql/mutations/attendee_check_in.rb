@@ -14,7 +14,7 @@ module Mutations
 
 			#throw error if event isn't available for check-in yet
 			if @event.blank?
-				err = "Event not available for check-in"
+				err = "Event not available for check-in" 
 				GraphQL::ExecutionError.new(err)
 			else
 				if @attendee.blank?
