@@ -4,17 +4,18 @@ module Mutations
 
 		argument :eventid, String, required: true
 		argument :hostid, String, required: true
+		argument :title, String, required: true
 
 		type Types::HostType
 
-		def resolve(eventid:nil, hostid:nil)
+		def resolve(eventid:nil, title:nil, hostid:nil)
 			#add validation code
 			#if event already exists, then add that host to the event
 			@event = Event.find_by_eventid(eventid)
 			@host = Host.find_by_hostid(hostid)
 
 			if @event.blank? #doesn't exist
-				@event = Event.create(:eventid => eventid)
+				@event = Event.create(:eventid => eventid, :title => title)
 			else
 				#throw error
 			end
