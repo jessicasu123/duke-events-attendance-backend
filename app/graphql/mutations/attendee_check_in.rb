@@ -8,8 +8,8 @@ module Mutations
 		type Types::HostType
 
 		
-		@cardnumber = Idmws.getCardNumber($uniqueID)
-		puts @cardnumber
+		#@cardnumber = Idmws.getCardNumber($uniqueID)
+		#puts @cardnumber
 
 		def resolve(eventid:nil, duid:nil)
 			
