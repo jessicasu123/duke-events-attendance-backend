@@ -2,9 +2,11 @@ class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token 
   def execute
 
-    val = eval( request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'] )
-    $uniqueID = val[:dukeUniqueID]
-    puts $uniqueID
+    if !request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'].blank?
+      val = eval( request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'] )
+      $uniqueID = val[:dukeUniqueID]
+      puts $uniqueID
+    end
 
     variables = ensure_hash(params[:variables])
     query = params[:query]
