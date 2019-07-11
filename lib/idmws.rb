@@ -11,7 +11,7 @@ class Idmws
 		http = Net::HTTP.new(uri.host, uri.port)
 		http.use_ssl = true
 		request = Net::HTTP::Get.new(uri.request_uri)
-		request.basic_auth(ENV["IDMS_USER", ENV["IDMS_PASSWORD"])
+		request.basic_auth(ENV["IDMS_USER"], ENV["IDMS_PASSWORD"])
 		response = http.request(request).body
 		doc = JSON.parse(response)
 		dukecardnumber = doc["userQueryResult"]["users"][0]["attributes"]["USR_UDF_DUKECARDNBR"]
