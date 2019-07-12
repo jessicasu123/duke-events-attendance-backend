@@ -1,5 +1,5 @@
 module Mutations
-	class AttendeeCheckIn < GraphQL::Schema::Mutation
+	class SelfCheckIn < GraphQL::Schema::Mutation
 		description "Check in as attendee"
 
 		argument :eventid, String, required: true
