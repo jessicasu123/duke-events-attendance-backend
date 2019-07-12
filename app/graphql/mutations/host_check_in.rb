@@ -11,6 +11,7 @@ module Mutations
 		def resolve(eventid:nil, hostid:nil, title:nil)
 			#add validation code
 			#if event already exists, then add that host to the event
+			eventid = eventid.strip()
 			@event = Event.find_by_eventid(eventid)
 			@host = Host.find_by_hostid(hostid)
 

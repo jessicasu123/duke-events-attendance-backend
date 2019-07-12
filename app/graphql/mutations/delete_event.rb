@@ -7,6 +7,7 @@ module Mutations
 		type Types::EventType
 
 		def resolve(eventid: nil)
+			eventid = eventid.strip()
 			@event = Event.find_by_eventid(eventid)
 			@event.destroy
 
