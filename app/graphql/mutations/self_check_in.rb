@@ -22,6 +22,7 @@ module Mutations
 
 			
 			#add validation code
+			eventid = eventid.strip()
 			@event = Event.find_by_eventid(eventid)
 			@cardnumber = Idmws.getCardNumber($uniqueID)[0]
 			puts "CARD NUMBER: #{@cardnumber}"
