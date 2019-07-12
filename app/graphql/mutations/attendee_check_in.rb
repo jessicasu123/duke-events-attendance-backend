@@ -3,7 +3,7 @@ module Mutations
 		description "Check in as attendee"
 
 		argument :eventid, String, required: true
-		argument :duid, String, required: true
+		#argument :duid, String, required: true
 
 		type Types::HostType
 
@@ -11,7 +11,8 @@ module Mutations
 		#@cardnumber = Idmws.getCardNumber($uniqueID)
 		#puts @cardnumber
 
-		def resolve(eventid:nil, duid:nil)
+		#remove duid param
+		def resolve(eventid:nil)
 			
 			#puts request.headers.inspect
 
@@ -20,10 +21,11 @@ module Mutations
 			# get attributes (DukeCardNumber, First Name, LastName)
 
 			
-
 			#add validation code
 			@event = Event.find_by_eventid(eventid)
-			@attendee = Attendee.find_by_duid(duid)
+			@cardnumber = Idmws.getCardNumber($uniqueID)[0]
+			puts "CARD NUMBER: #{@cardnumber}"
+			@attendee = Attendee.find_by_duid(@cardnumber)
 			# @cardnumber = Idmws.get_card_number($uniqueID)
 			# puts @cardnumber
 
@@ -33,14 +35,14 @@ module Mutations
 				GraphQL::ExecutionError.new(err)
 			else
 				if @attendee.blank?
-					@attendee = Attendee.create(:duid => duid)
+					@attendee = Attendee.create(:duid => @cardnumber)
 				else
 					#throw error
 				end
 
 				if !@event.attendees.pluck(:duid).include?(@attendee.duid) 
 
-					xml = Transact.createDukeCardXML(duid)
+					xml = Transact.createDukeCardXML(@cardnumber)
 					if Transact.verify(xml) == "0" 
 						subscription = @event.subscriptions.create(subscribable: @attendee)
 					else
