@@ -63,12 +63,21 @@ module Types
       Idmws.getCardNumber($uniqueID)[0]
     end
 
-    field :get_name, String, null: false do
-      description "Returns name by duke unique id"
+    field :get_myname, String, null: false do
+      description "Returns name by user's duke unique id from headers"
     end
 
-    def get_name()
-      Idmws.getName($uniqueID)
+    def get_myname()
+      Idmws.getName($uniqueID, "duid")
+    end
+
+    field :get_name, String, null: false do
+      description "Returns name by duke unique id"
+      argument :id, ID, required: true
+    end
+
+    def get_name(id:)
+      Idmws.getName(id, "card")
     end
 
     field :get_netid, String, null: false do
