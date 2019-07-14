@@ -7,6 +7,8 @@ class GraphqlController < ApplicationController
       val = eval( request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'] )
       puts "VAL: #{val}"
       $uniqueID = val[:dukeUniqueID]
+      $netID = val[:dukeNetID]
+      puts $netID
       puts $uniqueID
     end
 

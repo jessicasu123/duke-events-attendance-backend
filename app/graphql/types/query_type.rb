@@ -71,7 +71,13 @@ module Types
       Idmws.getName($uniqueID)
     end
 
+    field :get_netid, String, null: false do
+      description "Returns netid by duke unique id"
+    end
 
+    def get_netid()
+      $netID
+    end
 
   end
 end
