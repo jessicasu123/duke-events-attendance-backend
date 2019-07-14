@@ -63,6 +63,14 @@ module Types
       Idmws.getCardNumber($uniqueID)[0]
     end
 
+    field :get_name, String, null: false do
+      description "Returns name by duke unique id"
+    end
+
+    def get_name()
+      Idmws.getName($uniqueID)
+    end
+
 
 
   end
