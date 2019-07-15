@@ -70,14 +70,14 @@ module Types
       Idmws.getName($uniqueID, "duid")
     end
 
-    field :get_name, String, null: false do
-      description "Returns name by duke unique id"
-      argument :id, ID, required: true
-    end
+    # field :get_name, String, null: false do
+    #   description "Returns name by duke unique id"
+    #   argument :id, ID, required: true
+    # end
 
-    def get_name(id:)
-      Idmws.getName(id, "card")
-    end
+    # def get_name(id:)
+    #   Idmws.getName(id, "card")
+    # end
 
     # field :get_netid, String, null: false do
     #   description "Returns netid by duke unique id"
@@ -87,18 +87,31 @@ module Types
     #   $netID
     # end
 
-    field :get_check_in_time, String, null: false do
-      description "Returns check in time by card number"
+    field :get_info, [String], null: false do
+      description "Returns name by duke unique id"
       argument :attendeeid, ID, required: true
       argument :eventid, ID, required: true
     end
 
-    def get_check_in_time(attendeeid:, eventid:)
+    def get_info(attendeeid:, eventid:)
       @event = Event.find_by_eventid(eventid)
       @attendee = @event.attendees.find_by_duid(attendeeid)
       @time = @attendee.created_at.strftime("%I:%M %p")
-      @time
+      [@time, Idmws.getName(attendeeid, "card")]
     end
+
+    # field :get_check_in_time, String, null: false do
+    #   description "Returns check in time by card number"
+    #   argument :attendeeid, ID, required: true
+    #   argument :eventid, ID, required: true
+    # end
+
+    # def get_check_in_time(attendeeid:, eventid:)
+    #   @event = Event.find_by_eventid(eventid)
+    #   @attendee = @event.attendees.find_by_duid(attendeeid)
+    #   @time = @attendee.created_at.strftime("%I:%M %p")
+    #   @time
+    # end
 
   end
 end
