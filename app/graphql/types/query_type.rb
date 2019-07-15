@@ -88,5 +88,18 @@ module Types
       $netID
     end
 
+    field :get_check_in_time, String, null: false do
+      description "Returns check in time by card number"
+      argument :attendeeid, ID, required: true
+      argument :eventid, ID, required: true
+    end
+
+    def get_check_in_time(attendeeid:, eventid:)
+      @event = Event.find_by_eventid(eventid)
+      @attendee = @event.attendees.find_by_duid(attendeeid)
+      @time = @attendee.created_at.strftime("%I:%M %p")
+      @time
+    end
+
   end
 end
