@@ -95,9 +95,19 @@ module Types
     end
 
     def get_info(attendeeid:, eventid:)
+    
+
       @event = Event.find_by_eventid(eventid)
-      @attendee = @event.attendees.find_by_duid(attendeeid)
-      @time = @attendee.created_at.strftime("%I:%M %p")
+
+      @event.subscriptions.each do |subscription|
+        if subscription.subscribable_type == 'Attendee'
+          puts "here"
+          if Attendee.find(subscription.subscribable_id).duid = attendeeid
+            @time = subscription.created_at.strftime("%I:%M %p")
+            puts @time
+          end
+        end
+      end
       [@time, Idmws.getName(attendeeid, "card")]
     end
 
