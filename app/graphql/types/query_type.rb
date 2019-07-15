@@ -16,11 +16,10 @@ module Types
 
     field :host_events, [EventType], null: false do
       description "Returns all events for a particular host by host id"
-      argument :id, ID, required: true
     end
 
-    def host_events(id:)
-      @host = Host.find_by_hostid(id)
+    def host_events()
+      @host = Host.find_by_hostid($netid)
       @host.events
     end
 
