@@ -19,7 +19,8 @@ module Types
     end
 
     def host_events()
-      @host = Host.find_by_hostid($netid)
+      puts $netID
+      @host = Host.find_by_hostid($netID)
       @host.events
     end
 
