@@ -88,7 +88,7 @@ module Types
     end
 
     field :get_info, [String], null: false do
-      description "Returns name by duke unique id"
+      description "Returns name and check in time by duke unique id"
       argument :attendeeid, ID, required: true
       argument :eventid, ID, required: true
     end
