@@ -79,13 +79,13 @@ module Types
       Idmws.getName(id, "card")
     end
 
-    field :get_netid, String, null: false do
-      description "Returns netid by duke unique id"
-    end
+    # field :get_netid, String, null: false do
+    #   description "Returns netid by duke unique id"
+    # end
 
-    def get_netid()
-      $netID
-    end
+    # def get_netid()
+    #   $netID
+    # end
 
     field :get_check_in_time, String, null: false do
       description "Returns check in time by card number"
