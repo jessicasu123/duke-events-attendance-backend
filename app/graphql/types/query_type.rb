@@ -68,7 +68,7 @@ module Types
     end
 
     def get_myname()
-      Idmws.getName($uniqueID, "duid")
+      Idmws.getName($uniqueID)
     end
 
     # field :get_name, String, null: false do
