@@ -1,10 +1,56 @@
 <h1>All Events</h1>
 
-<input type="text" id="myInput" onkeyup="searchEvents()" placeholder="Search for event..">
+<input type="text" name="myInput" id="myInput" placeholder="Search for event.." class = "form-control">
 
-<table>
+
+<% content_for :js do %>
+	<script> 
+		$(document).ready(function(){
+  			$("#myInput").on("keyup", function() {
+    			var value = $(this).val().toLowerCase();
+    			$("#myTable tr").filter(function() {
+      				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    			});
+  			});
+		});
+		
+	</script>
+
+<% end %>
+
+<script>
+	$(document).ready(function() {
+		$('#myInput').keyUp(function() {
+			search_table($(this).val());
+		}
+		function search_table(value) {
+			$('#myTable tr').each(function() {
+				var found = 'false';
+				$(this).each(function() {
+					if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+						found = 'true';
+					}
+				});
+				if (found=='true') {
+					$(this).show();
+				}
+				else {
+					$(this).hide();
+				}
+			});
+		}
+	});
+</script>
+
+
+<%= form_tag(events_path, metnod: :get) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<table id="myTable">
 	<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
-	<tr>
+	<tr class="header">
 		<th style = "background-color: grey">Title</th>
 		<th style = "background-color: grey">ID</th>
 		<th style = "background-color: grey">Date</th>

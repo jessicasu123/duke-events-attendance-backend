@@ -23,10 +23,13 @@ module Mutations
 			
 			#add validation code
 			eventid = eventid.strip()
+
 			@event = Event.find_by_eventid(eventid)
-			@cardnumber = Idmws.getCardNumber($uniqueID)[0]
-			puts "CARD NUMBER: #{@cardnumber}"
-			@attendee = Attendee.find_by_duid(@cardnumber)
+
+			# @cardnumber = Idmws.getCardNumber($uniqueID)[0]
+
+			# puts "CARD NUMBER: #{@cardnumber}"
+			@attendee = Attendee.find_by_duid($uniqueID)
 			# @cardnumber = Idmws.get_card_number($uniqueID)
 			# puts @cardnumber
 
@@ -36,13 +39,14 @@ module Mutations
 				GraphQL::ExecutionError.new(err)
 			else
 				if @attendee.blank?
-					@attendee = Attendee.create(:duid => @cardnumber)
+					@attendee = Attendee.create(:duid => $uniqueID)
 				else
 					#throw error
 				end
 
 				if !@event.attendees.pluck(:duid).include?(@attendee.duid) 
 
+					@cardnumber = Idmws.getCardNumber($uniqueID)[0]
 					xml = Transact.createDukeCardXML(@cardnumber)
 					if Transact.verify(xml) == "0" 
 						subscription = @event.subscriptions.create(subscribable: @attendee)

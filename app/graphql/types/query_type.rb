@@ -108,8 +108,16 @@ module Types
           end
         end
       end
-      [@time, Idmws.getName(attendeeid, "card")]
+      [@time, Idmws.getName(attendeeid)]
     end
+
+    field :get_duid, String, null: false do 
+      description "Returns duke unique id"
+    end 
+
+    def get_duid() 
+      $uniqueID
+    end 
 
     # field :get_check_in_time, String, null: false do
     #   description "Returns check in time by card number"

@@ -43,7 +43,9 @@ module Mutations
 
 				if !@event.attendees.pluck(:duid).include?(@attendee.duid) 
 
-					xml = Transact.createDukeCardXML(duid)
+					@cardnumber = Idmws.getCardNumber(duid)[0]
+
+					xml = Transact.createDukeCardXML(@cardnumber)
 					if Transact.verify(xml) == "0" 
 						subscription = @event.subscriptions.create(subscribable: @attendee)
 					else
