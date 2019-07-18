@@ -14,21 +14,47 @@ body {
   margin-bottom: 12px; /* Add some space below the input */
 }
 
-#myTable {
-
+table{
+  border: 1px;
+  cellpadding: 5px; 
+  cellspacing: 5px;
+  width: 900px;
 }
 
-#myTable th, #myTable td {
-	text-align: left;
+th, td {
+	text-align: center;
+  padding: 20px;
+}
+
+th{
+  background-color: grey;
 }
 
 #myTable tr {
   /* Add a bottom border to all table rows */
   border-bottom: 1px solid #ddd; 
+  height: 80px;
 }
 
 #myTable tr.header, #myTable tr:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
+}
+
+.form-control {
+    display: block;
+    width: 900px;
+    margin: 20px auto;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 

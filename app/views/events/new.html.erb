@@ -1,0 +1,55 @@
+<!-- <form id="createEventForm">
+  Event Title
+  <input type="text" name="title"><br>
+  Event ID
+  <input type="text" name="eventid"><br>
+  Hosts
+  <input type="text" name="hosts"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<script type="text/javascript">
+  var x = document.getElementById("createEventForm").elements.length;
+  console.log(x)
+</script> -->
+
+
+<!-- <%= form_with scope: :event, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :eventid %><br>
+    <%= form.text_area :eventid %>
+  </p>
+
+  <p>
+    <%= form.label :hostid %><br>
+    <%= form.text_area :hostid %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %> -->
+
+<%= form_for @event do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label "Event ID" %>
+  <%= f.text_field :eventid %>
+  <%= f.collection_check_boxes :host_ids, Host.all, :id, :hostid %>
+  <%= f.submit %>
+<% end %>
+ 
+<!-- 
+ <%= form_with model: @event, local: true do |f| %>
+    <%= f.label :title%>
+    <%= f.text_field :title %> </br></br>
+    <%= f.label :eventid %>
+    <%= f.text_field :eventid %> </br></br>
+    <%= f.submit %>
+ <% end %> -->

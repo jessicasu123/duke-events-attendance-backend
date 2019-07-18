@@ -21,6 +21,8 @@
 	<%= @event.created_at.strftime("%I:%M %p") %> 
 </p>
 
+<%= link_to "Download CSV", event_path(format: "csv") %>
+
 <p> 
 	<strong> Attendee Data: </strong>
 	<table>

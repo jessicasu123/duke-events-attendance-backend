@@ -71,3 +71,10 @@ gem 'nokogiri'
 gem 'graphql'
 
 gem 'graphiql-rails', group: :development
+
+#Filteriffic
+gem 'filterrific'
+gem 'will_paginate'
+
+#Shibb
+gem 'omniauth-shibboleth'

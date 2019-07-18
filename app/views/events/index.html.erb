@@ -1,62 +1,34 @@
 <h1>All Events</h1>
 
-<input type="text" name="myInput" id="myInput" placeholder="Search for event.." class = "form-control">
-
-
-<% content_for :js do %>
-	<script> 
-		$(document).ready(function(){
-  			$("#myInput").on("keyup", function() {
-    			var value = $(this).val().toLowerCase();
-    			$("#myTable tr").filter(function() {
-      				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    			});
-  			});
-		});
-		
-	</script>
-
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Search
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed form-control'
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
 <% end %>
 
-<script>
-	$(document).ready(function() {
-		$('#myInput').keyUp(function() {
-			search_table($(this).val());
-		}
-		function search_table(value) {
-			$('#myTable tr').each(function() {
-				var found = 'false';
-				$(this).each(function() {
-					if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-						found = 'true';
-					}
-				});
-				if (found=='true') {
-					$(this).show();
-				}
-				else {
-					$(this).hide();
-				}
-			});
-		}
-	});
-</script>
+<%= render(
+  partial: 'events/list',
+  locals: { events: @events }
+) %>
 
 
-<%= form_tag(events_path, metnod: :get) do %>
-  <%= text_field_tag :term %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
-<table id="myTable">
+<!-- 
+<table id="thisTable">
 	<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
 	<tr class="header">
-		<th style = "background-color: grey">Title</th>
-		<th style = "background-color: grey">ID</th>
-		<th style = "background-color: grey">Date</th>
-		<th style = "background-color: grey">Hosts</th>
-		<th style = "background-color: grey">Number of Attendees</th>
-		<th style = "background-color: grey">Attendees</th>
+		<th>Title</th>
+		<th>ID</th>
+		<th>Date</th>
+		<th>Hosts</th>
+		<th>Number of Attendees</th>
+		<th>Attendees</th>
 		
 	</tr>
 
@@ -72,4 +44,4 @@
 			<td><%= link_to 'Show Details', event_path(event) %></td>
 		</tr>
 	 <% end %> 
-</table>
+</table> -->

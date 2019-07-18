@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post "/graphql", to: "graphql#execute"
   get 'events' => 'events#index'
+  post 'events/new' => 'events#create'
   get 'attendees' => 'attendees#index'
   get 'hosts' => 'hosts#index'
   get '/hosts/:id', to: 'hosts#show', as: 'host'

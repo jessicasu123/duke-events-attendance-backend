@@ -10,7 +10,6 @@ module Mutations
 			eventid = eventid.strip()
 			@event = Event.find_by_eventid(eventid)
 			@event.destroy
-
 			
 		end 
 
