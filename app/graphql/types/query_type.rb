@@ -55,21 +55,30 @@ module Types
       @attendee.events
     end
 
-    field :get_duke_card_number, String, null: false do
-      description "Returns duke card number by duke unique id"
+    field :get_my_info, [String], null: false do
+      description "Returns user info by access token"
     end
 
-    def get_duke_card_number()
-      Idmws.getCardNumber($uniqueID)[0]
+
+    def get_my_info()
+      [Idmws.getCardNumber($uniqueID)[0], Idmws.getName($uniqueID), $netID, $uniqueID]
     end
 
-    field :get_myname, String, null: false do
-      description "Returns name by user's duke unique id from headers"
-    end
+    # field :get_duke_card_number, String, null: false do
+    #   description "Returns duke card number by duke unique id"
+    # end
 
-    def get_myname()
-      Idmws.getName($uniqueID)
-    end
+    # def get_duke_card_number()
+    #   Idmws.getCardNumber($uniqueID)[0]
+    # end
+
+    # field :get_myname, String, null: false do
+    #   description "Returns name by user's duke unique id from headers"
+    # end
+
+    # def get_myname()
+    #   Idmws.getName($uniqueID)
+    # end
 
     # field :get_name, String, null: false do
     #   description "Returns name by duke unique id"
@@ -80,13 +89,13 @@ module Types
     #   Idmws.getName(id, "card")
     # end
 
-    field :get_netid, String, null: false do
-      description "Returns netid by duke unique id"
-    end
+    # field :get_netid, String, null: false do
+    #   description "Returns netid by duke unique id"
+    # end
 
-    def get_netid()
-      $netID
-    end
+    # def get_netid()
+    #   $netID
+    # end
 
     field :get_info, [String], null: false do
       description "Returns name and check in time by duke unique id"
@@ -111,13 +120,13 @@ module Types
       [@time, Idmws.getName(attendeeid)]
     end
 
-    field :get_duid, String, null: false do 
-      description "Returns duke unique id"
-    end 
+    # field :get_duid, String, null: false do 
+    #   description "Returns duke unique id"
+    # end 
 
-    def get_duid() 
-      $uniqueID
-    end 
+    # def get_duid() 
+    #   $uniqueID
+    # end 
 
     # field :get_check_in_time, String, null: false do
     #   description "Returns check in time by card number"
