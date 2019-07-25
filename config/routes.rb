@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :events
 
   post 'host_checkin' => 'hosts#checkin',  as: :host_checkin
+  post 'events/:id/openEvent' => 'events#openEvent', as: :open_event
   post 'attendee_checkin' => 'attendees#checkin', as: :attendee_checkin
   post 'attendees' => 'attendees#getAttendees', as: :getAttendees
 

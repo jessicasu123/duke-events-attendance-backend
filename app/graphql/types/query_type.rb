@@ -64,6 +64,16 @@ module Types
       [Idmws.getCardNumber($uniqueID)[0], Idmws.getName($uniqueID), $netID, $uniqueID]
     end
 
+
+    field :get_event, EventType, null: false do
+      description "Returns event info by id"
+      argument :eventid, ID, required: true
+    end
+
+    def get_event(eventid:nil)
+      Event.find_by_eventid(eventid)
+    end
+
     # field :get_duke_card_number, String, null: false do
     #   description "Returns duke card number by duke unique id"
     # end
