@@ -23,6 +23,16 @@ class EventsController < ApplicationController
 		#@events = Event.all 
 	end 
 
+	def openEvent(checkintype)
+		@event = Event.find(params[:id])
+		@event.status = "active"
+		@event.checkintype = checkintype
+		@event.save
+	end
+
+	def edit
+		@event = Event.find(params[:id])
+	end
 
 
 	def show 
@@ -39,18 +49,32 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		@event = Event.find_by_eventid(:eventid)
-		@host = Host.find_by_hostid(:hostid)
+		val = eval( "#{ params[:event_host_subscription] }")
+		@event = Event.find_by_eventid($events_hash[val["title"]])
+		@host = Host.find_by_hostid(val["subscribable_id"])
 
-			if @event.blank? #doesn't exist
-				@event = Event.new(event_params)
-				@event.save
-				redirect_to @event
-			else
-				#throw error
-			end
+		if @event.blank? #doesn't exist
+			@event = Event.new(:eventid => $events_hash[val["title"]], :title => val["title"], :status => "inactive", :checkintype => "unspecified")
+			@event.save
+		else
+			#throw error
+		end
+
+		if @host.blank?
+			#check if host is valid
+			@host = Host.create(:hostid => val["subscribable_id"])
+		else
+			#throw error
+		end
+
+		if !@event.hosts.pluck(:hostid).include?(@host.hostid) 
+			subscription = @event.subscriptions.create(subscribable: @host)
+		end
+
+		redirect_to @event
 
 	end
+
 
 
 	def destroy
@@ -59,8 +83,8 @@ class EventsController < ApplicationController
   		redirect_to events_path
 	end
 
-	private
-	  def event_params
-	    params.require(:event).permit(:title, :eventid, host_ids: [])
-	  end
+	# private
+	#   def event_params
+	#     params.require(:event).permit(:title, :eventid, :subscribable_id)
+	#   end
 end

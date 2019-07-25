@@ -1,8 +1,8 @@
+<p class="redirect_link"><%= link_to "Back to all events", '/events' %></p>
 
-<p>
-	<strong> Event Title:</strong>
+<h2>
 	<%= @event.title %>
-</p>
+</h2>
 
 
 <p>
@@ -39,7 +39,6 @@
 				<% if subscription.subscribable_type == 'Attendee' %>
 					<td>  <%= link_to Attendee.find(subscription.subscribable_id).duid, attendee_path(Attendee.find(subscription.subscribable_id)) %> </td>
 					<td> <%= subscription.created_at.strftime("%I:%M %p") %> </td>
-
 				<% end %>
 
 			</tr>
@@ -47,5 +46,6 @@
 
 	</table>
 </p>
+
  <%# render @event.attendees %> 
 

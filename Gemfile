@@ -78,3 +78,6 @@ gem 'will_paginate'
 
 #Shibb
 gem 'omniauth-shibboleth'
+
+#Search autocomplete
+gem 'jquery-rails'

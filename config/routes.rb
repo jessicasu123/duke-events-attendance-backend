@@ -3,11 +3,13 @@ Rails.application.routes.draw do
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
 
-  root 'home#welcome'
+  root 'events#index'
 
   post "/graphql", to: "graphql#execute"
   get 'events' => 'events#index'
   post 'events/new' => 'events#create'
+  post 'events/edit' => 'events#edit'
+  post 'events/:id/removeSubscription/:subscriber_id' => 'attendees#removeSubscription'
   get 'attendees' => 'attendees#index'
   get 'hosts' => 'hosts#index'
   get '/hosts/:id', to: 'hosts#show', as: 'host'
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
 
   get 'attendees' => 'attendees#index', as: :index
   get 'attendees/:id' => 'attendees#show', as: :attendee
+  post 'attendees/:id/delete' => 'attendees#removeSubscription', as: :attendee_delete
 end

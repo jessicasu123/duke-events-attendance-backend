@@ -19,11 +19,20 @@
 		<% @attendee.events.each do |event| %> 
 			<tr> 
 				<td> <%= event.title %></td> 
-				
 				<td> <%= event.created_at.strftime("%B %d, %Y") %></td> 
+
 			</tr>
 		<% end %>  
 		
+		<% @attendee.subscriptions.each do |subscription| %> 
+			<tr> 
+				<% if subscription.subscribable_type == 'Event' %>
+					<td>  <%= link_to Attendee.find(subscription.subscribable_id).duid, attendee_path(Attendee.find(subscription.subscribable_id)) %> </td>
+					<td> <%= subscription.created_at.strftime("%I:%M %p") %> </td>
+				<% end %>
+
+			</tr>
+		<% end %>
 
 
 	</table>

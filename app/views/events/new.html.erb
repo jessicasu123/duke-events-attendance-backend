@@ -1,55 +1,42 @@
-<!-- <form id="createEventForm">
-  Event Title
-  <input type="text" name="title"><br>
-  Event ID
-  <input type="text" name="eventid"><br>
-  Hosts
-  <input type="text" name="hosts"><br>
-  <input type="submit" value="Submit">
-</form>
+<% require 'net/http'
+require 'json'
+require 'uri'
 
-
-<script type="text/javascript">
-  var x = document.getElementById("createEventForm").elements.length;
-  console.log(x)
-</script> -->
-
-
-<!-- <%= form_with scope: :event, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
  
-  <p>
-    <%= form.label :eventid %><br>
-    <%= form.text_area :eventid %>
-  </p>
 
-  <p>
-    <%= form.label :hostid %><br>
-    <%= form.text_area :hostid %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %> -->
+url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple"
+uri = URI.parse(url)
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+request = Net::HTTP::Get.new(uri.request_uri)
+response = http.request(request).body
+doc = JSON.parse(response)
+@events_array = doc["events"]
 
-<%= form_for @event do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
-  <%= f.label "Event ID" %>
-  <%= f.text_field :eventid %>
-  <%= f.collection_check_boxes :host_ids, Host.all, :id, :hostid %>
-  <%= f.submit %>
-<% end %>
  
-<!-- 
- <%= form_with model: @event, local: true do |f| %>
-    <%= f.label :title%>
-    <%= f.text_field :title %> </br></br>
-    <%= f.label :eventid %>
-    <%= f.text_field :eventid %> </br></br>
-    <%= f.submit %>
- <% end %> -->
+
+$events_hash = Hash.new
+
+ 
+
+@events_array.each do |event| 
+    #puts event["summary"].strip()
+    #@event_titles.push(event["summary"].strip())
+    #event_ids.push(event["id"])
+    $events_hash[event["summary"]] = event["id"]
+end
+
+
+ 
+
+@title_array_from_hash = $events_hash.keys %>
+
+<h1>SIGN UP AS HOST</h1>
+
+<%= form_for :event_host_subscription, url: "/events/new" do |f| %>
+  <%= f.collection_select :title, @title_array_from_hash, :to_s, :to_s, :include_blank => true %>
+  <%= f.label "HOST ID" %>
+  <%= f.text_field :subscribable_id %>
+  <%= f.submit "Make Me A Host" %>
+<% end  %>
+ 
