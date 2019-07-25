@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	skip_before_action :verify_authenticity_token
 	def index 
 	@filterrific = initialize_filterrific(
 	      Event,
@@ -23,10 +24,13 @@ class EventsController < ApplicationController
 		#@events = Event.all 
 	end 
 
-	def openEvent(checkintype)
-		@event = Event.find(params[:id])
+	def edit
+	end
+
+	def openEvent
+		@event = Event.find_by_eventid(params[:id])
 		@event.status = "active"
-		@event.checkintype = checkintype
+		@event.checkintype = params[:checkintype]
 		@event.save
 	end
 
