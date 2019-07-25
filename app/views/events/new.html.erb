@@ -23,13 +23,13 @@ $events_hash = Hash.new
     #puts event["summary"].strip()
     #@event_titles.push(event["summary"].strip())
     #event_ids.push(event["id"])
-    $events_hash[event["summary"]] = event["id"]
+    $events_hash[event["summary"].strip()] = event["id"].strip()
 end
 
 
  
 
-@title_array_from_hash = $events_hash.keys %>
+@title_array_from_hash = $events_hash.keys.sort %>
 
 <h1>SIGN UP AS HOST</h1>
 
