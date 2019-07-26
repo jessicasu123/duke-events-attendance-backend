@@ -10,9 +10,11 @@
       <th>Event ID</th>
       <th>Date</th>
       <th>Hosts</th>
+      <th>Host Details</th>
       <th>Number of Attendees</th>
       <th>Attendees</th>
       <th>Delete</th>
+
     </tr>
     <% @events.each do |event| %>
       <tr> 
@@ -20,6 +22,7 @@
         <td> <%= event.eventid %></td>
         <td> <%= event.created_at.strftime("%B %d, %Y") %></td>
         <td><%= render event.hosts %></td>
+        <td><%= link_to 'Show Details' %></td>
         <td> <%= event.attendees.count %></td>
         <td><%= link_to 'Show Details', event_path(event) %></td>
         <td><%= link_to 'Delete', event_path(event), method: :delete %></td>
