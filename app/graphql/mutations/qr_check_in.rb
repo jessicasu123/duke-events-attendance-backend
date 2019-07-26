@@ -36,7 +36,7 @@ module Mutations
 				GraphQL::ExecutionError.new(err)
 			else
 				if @attendee.blank?
-					@attendee = Attendee.create(:duid => duid)
+					@attendee = Attendee.create(:duid => duid, :name => Idmws.getName(duid))
 				else
 					#throw error
 				end
