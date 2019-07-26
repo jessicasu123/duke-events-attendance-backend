@@ -71,9 +71,9 @@ class EventsController < ApplicationController
 		end
 
 		if !@event.hosts.pluck(:hostid).include?(@host.hostid)
-			@subscription = @event.subscriptions.new(subscribable: @host)
 			@event.save 
 			@host.save
+			@subscription = @event.subscriptions.new(subscribable: @host)
 			@subscription.save
 		end
 
