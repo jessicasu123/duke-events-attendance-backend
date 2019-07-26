@@ -2,7 +2,7 @@
 require 'json'
 require 'uri'
 
-url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple"
+url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple&local=true"
 uri = URI.parse(url)
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
@@ -31,6 +31,10 @@ end
 	<h1>Sign Up As Host</h1>
 </div>
 
+<div class="nav">
+
+</div>
+
 <div class="card" style="position: relative; height: 300px">
 	<%= form_for :event_host_subscription, url: "/events/new" do |f| %>
 	<h2><%= f.label "EVENT" %></h2>
@@ -42,5 +46,5 @@ end
 </div>
 
 <div>
-	<p>If your event isn't listed, submit it on <a href="">Duke Calendar</a></p>
+	<p>If your event isn't listed, submit it on <a href="http://calendar.duke.edu/eventsubmit?setappvar=confirmed(no)">Duke Calendar</a></p>
 </div>
