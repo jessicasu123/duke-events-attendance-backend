@@ -8,6 +8,7 @@ body {
   color: #262626 ;
 }
 
+
 p{
   font-family: 'Open Sans';
   color: #262626 ;
@@ -37,6 +38,11 @@ table{
   cellpadding: 5px; 
   cellspacing: 5px;
   width: 90%;
+  font-family: 'Open Sans';
+}
+
+table th {
+  text-transform: uppercase;
 }
 
 #myInput {
@@ -104,5 +110,20 @@ table{
 }
 
 .redirect_link{
-  text-align: left;
+  margin-top: 20px;
+  text-align: center;
 }
+
+.header p {
+  font-family: 'Open Sans'; 
+  color: black;
+  font-size: 20px;
+  display: block;
+}
+
+.event_header {
+  font-family: 'Open Sans'; 
+  color: white; 
+  font-size: 30px;
+}
+
