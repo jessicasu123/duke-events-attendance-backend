@@ -3,15 +3,57 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-	background-color: #00539B;
+	background-color: #E2E6ED;
+	margin: 0px;
+	font-family: "Open Sans";
 }
 
-h1{
-	font-family: "Helvetica";
+.banner h1{
+	font-family: "Roboto";
 	color: white;
+	font-size: 60px;
 	text-align: center;
+	margin: auto;
 }
 
-#home{
-	background-color: white;
+.banner{
+	background-color: #012169;
+	height: 100px;
+	line-height: 100px;
+	margin-bottom: 50px;
+}
+
+#card-container{
+	width: 85%;
+	height: 500px;
+	margin: 0px auto 0px auto;
+}
+
+.card{
+	width: 25%;
+	height: 450px;
+	background-color: #012169;
+	border-radius: 20px;
+	display: inline-block;
+	margin: 20px;
+	position: absolute;
+}
+
+#card1{
+	left: 300px;
+}
+
+#card2{
+	right: 300px;
+}
+
+.card h2{
+	font-family: "Roboto";
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.card .image{
+	margin-top: 50px;
 }

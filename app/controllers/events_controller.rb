@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 	skip_before_action :verify_authenticity_token
+
 	def index 
 	@filterrific = initialize_filterrific(
 	      Event,
@@ -59,20 +60,21 @@ class EventsController < ApplicationController
 
 		if @event.blank? #doesn't exist
 			@event = Event.new(:eventid => $events_hash[val["title"]], :title => val["title"], :status => "inactive", :checkintype => "unspecified")
-			@event.save
 		else
 			#throw error
 		end
 
 		if @host.blank?
-			#check if host is valid
-			@host = Host.create(:hostid => val["subscribable_id"])
+			@host = Host.new(:hostid => val["subscribable_id"])
 		else
 			#throw error
 		end
 
-		if !@event.hosts.pluck(:hostid).include?(@host.hostid) 
-			subscription = @event.subscriptions.create(subscribable: @host)
+		if !@event.hosts.pluck(:hostid).include?(@host.hostid)
+			@subscription = @event.subscriptions.new(subscribable: @host)
+			@event.save 
+			@host.save
+			@subscription.save
 		end
 
 		redirect_to @event

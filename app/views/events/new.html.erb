@@ -2,8 +2,6 @@
 require 'json'
 require 'uri'
 
- 
-
 url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple"
 uri = URI.parse(url)
 http = Net::HTTP.new(uri.host, uri.port)
@@ -13,11 +11,7 @@ response = http.request(request).body
 doc = JSON.parse(response)
 @events_array = doc["events"]
 
- 
-
 $events_hash = Hash.new
-
- 
 
 @events_array.each do |event| 
     #puts event["summary"].strip()
@@ -25,18 +19,28 @@ $events_hash = Hash.new
     #event_ids.push(event["id"])
     $events_hash[event["summary"].strip()] = event["id"].strip()
 end
-
-
- 
-
 @title_array_from_hash = $events_hash.keys.sort %>
 
-<h1>SIGN UP AS HOST</h1>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Merriweather|Open+Sans|Roboto:300,400&display=swap" rel="stylesheet">
+	<title>Host Sign-up</title>
+</head>
 
-<%= form_for :event_host_subscription, url: "/events/new" do |f| %>
-  <%= f.collection_select :title, @title_array_from_hash, :to_s, :to_s, :include_blank => true %>
-  <%= f.label "HOST ID" %>
-  <%= f.text_field :subscribable_id %>
-  <%= f.submit "Make Me A Host" %>
-<% end  %>
- 
+
+<div class="banner">
+	<h1>Sign Up As Host</h1>
+</div>
+
+<div class="card" style="position: relative; height: 300px">
+	<%= form_for :event_host_subscription, url: "/events/new" do |f| %>
+	<h2><%= f.label "EVENT" %></h2>
+	  <%= f.collection_select :title, @title_array_from_hash, :to_s, :to_s, {:prompt => 'Find your event by title'}, {:class=>'collection', required: true} %> <br>
+	  <h2><%= f.label "HOST ID"%></h2>
+	  <%= f.text_field :subscribable_id, :class=>'text-field', :required=>true, :minlength => 3, :maxlength => 5 %> <br>
+	  <%= f.submit "Make Me A Host", :class=>'button' %>
+	<% end  %>
+</div>
+
+<div>
+	<p>If your event isn't listed, submit it on <a href="">Duke Calendar</a></p>
+</div>

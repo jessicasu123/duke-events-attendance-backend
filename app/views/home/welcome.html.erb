@@ -1,4 +1,23 @@
-<div id="welcome">	
+<head>
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Merriweather|Open+Sans|Roboto:300,400&display=swap" rel="stylesheet">
+	<title>DukeCheck</title>
+</head>
+
+<div class="banner">	
 	<h1>Welcome to DukeCheck</h1>
-	<img src="\app\assets\images\DukeCheck">
+</div> 
+
+<div id="card-container">
+	<div class="card" id="card1">
+		<h2>Attendance Report</h2>
+		<div class="image">
+			<a href="/events"><%= image_tag("dataimage2.svg",  size: "300x300", :alt => "rss feed") %></a>
+		</div>
+	</div>
+	<div class="card" id="card2">
+		<h2>Assign Host</h2>
+		<div class="image">
+			<a href="events/new"><%= image_tag("hostimage.svg",  size: "300x300", :alt => "rss feed") %></a>
+		</div>
+	</div>
 </div>

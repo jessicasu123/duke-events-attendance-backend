@@ -9,6 +9,10 @@ skip_before_action :verify_authenticity_token
 	def show 
 		@host = Host.find(params[:id])
 	end
+
+	def new
+		@host = Host.new
+	end
 	
 	def checkin
 		#when host "checks in" to the event, that event is created and 

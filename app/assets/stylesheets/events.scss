@@ -4,6 +4,39 @@
 
 body {
 	text-align: center;
+  font-family: 'Open Sans';
+  color: #262626 ;
+}
+
+p{
+  font-family: 'Open Sans';
+  color: #262626 ;
+  display: inline;
+}
+
+#filterrific_results{
+  font-family: 'Open Sans';
+  color: #262626 ;
+  margin-bottom: 50px;
+}
+
+#filterrific_results table{
+  margin-top: 20px;
+}
+
+
+#filterrific_results th{
+  background-color: #339898;
+  text-transform: uppercase;
+  color: #262626;
+  letter-spacing: 1px;
+}
+
+table{
+  border: 1px;
+  cellpadding: 5px; 
+  cellspacing: 5px;
+  width: 90%;
 }
 
 #myInput {
@@ -14,37 +47,49 @@ body {
   margin-bottom: 12px; /* Add some space below the input */
 }
 
-table{
-  border: 1px;
-  cellpadding: 5px; 
-  cellspacing: 5px;
-  width: 900px;
+.search{
+  font-family: 'Open Sans';
+  color: #262626 ;
+  display: inline;
 }
 
-th, td {
-	text-align: center;
-  padding: 20px;
+.collection{
+  background-color: white;
+  font-family: 'Open Sans';
+  width: 80%;
+  font-size: 12px;
 }
 
-th{
-  background-color: grey;
+.error{
+  font-size: 10px;
+  color: red;
 }
 
-#myTable tr {
-  /* Add a bottom border to all table rows */
-  border-bottom: 1px solid #ddd; 
-  height: 80px;
+.text-field{
+  width: 75%;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  border: none;
+  padding: 2px;
+  padding-left: 5px;
+  margin-bottom: 50px;
 }
 
-#myTable tr.header, #myTable tr:hover {
-  /* Add a grey background color to the table header and on hover */
-  background-color: #f1f1f1;
+.button{
+  width: 50%;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 2px #666666;
+  padding: 5px;
 }
 
 .form-control {
-    display: block;
-    width: 900px;
-    margin: 20px auto;
+    display: inline;
+    width: 1000px;
+    margin: 5px auto 20px auto;
     height: calc(1.5em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
     font-size: 1rem;

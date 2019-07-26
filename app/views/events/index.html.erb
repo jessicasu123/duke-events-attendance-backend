@@ -1,16 +1,23 @@
-<h1>All Events</h1>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Merriweather|Open+Sans|Roboto:300,400&display=swap" rel="stylesheet">
+	<title>All Events</title>
+</head>
+
+<div class="banner">
+	<h1>All Events</h1>
+</div>
 
 <%= form_for_filterrific @filterrific do |f| %>
-  <div>
-    Search
-    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+  <div class="search">
+      <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
     <%= f.text_field(
       :search_query,
-      class: 'filterrific-periodically-observed form-control'
+      class: 'filterrific-periodically-observed form-control', placeholder: 'Find your event by title'
     ) %>
   </div>
   <%# add an automated spinner to your form when the list is refreshed %>
-  <%= render_filterrific_spinner %>
 <% end %>
 
 <%= render(
@@ -18,30 +25,7 @@
   locals: { events: @events }
 ) %>
 
-
-<!-- 
-<table id="thisTable">
-	<table border = "1" cellpadding = "5" cellspacing = "5" width = "800" height = "80">
-	<tr class="header">
-		<th>Title</th>
-		<th>ID</th>
-		<th>Date</th>
-		<th>Hosts</th>
-		<th>Number of Attendees</th>
-		<th>Attendees</th>
-		
-	</tr>
-
-	<% @events.each do |event| %>
-		<tr> 
-			<td> <%=event.title %></td>
-			<td> <%= event.eventid %></td>
-			<td> <%= event.created_at.strftime("%B %d, %Y") %></td>
-			<% event.hosts.each do |host| %>
-				<td><%= link_to host.hostid, host_path(host) %></td>
-			<% end %>
-			<td> <%= event.attendees.count %></td>
-			<td><%= link_to 'Show Details', event_path(event) %></td>
-		</tr>
-	 <% end %> 
-</table> -->
+<div>
+	<p>Don't see your event?</p>
+	<a href="../events/new">Add it</a>
+</div>
