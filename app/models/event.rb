@@ -41,7 +41,7 @@ class Event < ApplicationRecord
 
 	#To EXCEL file
 	def to_csv(options = {})
-		desired_columns = ["Name", "DUID", "Check-in Time"]
+		desired_columns = ["Name", "DUID", "Check-in Time", "Check-out Time", "Duration"]
       	CSV.generate(options) do |csv|
 	        csv << desired_columns
 	        #event = all.first
@@ -52,10 +52,12 @@ class Event < ApplicationRecord
 	      		duid = ""
 	      		if subscription.subscribable_type == 'Attendee'
 					checkInTime = subscription.created_at.strftime("%I:%M %p")
+					checkOutTime = DateTime.parse(subscription.checkout_time).strftime('%H:%M %p')
 					duid = Attendee.find(subscription.subscribable_id).duid
 					attendee_name = Idmws.getName(duid)
+					duration = "#{(( subscription.created_at - DateTime.parse(subscription.checkout_time) )/1.minute).round.abs} minutes"
 				end
-	          	csv << [attendee_name, duid, checkInTime]
+	          	csv << [attendee_name, duid, checkInTime, checkOutTime, duration]
 	        end
       end
     end
