@@ -22,22 +22,12 @@ module Mutations
 					GraphQL::ExecutionError.new(err)
 				else
 					@subscription = @event.subscriptions.find_by( subscriber_id: @event.id, subscribable_id: @attendee.id, subscribable_type: "Attendee")
-					#@subscription.checkout_time = "hack"
+					
 					@subscription.checkout_time = time
 
-
 					@subscription.save
-					#@subscription.checkout_time = @subscription.updated_at
-					
-					#now the checkout column is essentially the same as the time the
-					#subscription was updated... is it even necessary to have a check-out
-					#column? will there be a case in which the updated at time != the
-					#check-out time?
-					#another option is having the iOS app send the check-out time as a parameter
 					
 					puts @subscription.checkout_time
-					@subscription.save
-					puts @subscription.id #when i remove this i get an error... 
 				end
 			end
 
