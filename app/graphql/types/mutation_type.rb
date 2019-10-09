@@ -7,5 +7,6 @@ module Types
     field :delete_event, mutation: Mutations::DeleteEvent
     field :open_event, mutation: Mutations::OpenEvent
     field :close_event, mutation: Mutations::CloseEvent
+    field :check_out, mutation: Mutations::CheckOut
   end
 end

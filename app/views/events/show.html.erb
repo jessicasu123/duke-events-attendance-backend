@@ -35,6 +35,8 @@
 			<th style = "background-color: grey">Attendee Name</th>
 			<th style = "background-color: grey">DUID</th>
 			<th style = "background-color: grey">Check-in Time</th>
+			<th style = "background-color: grey">Check-out Time</th>
+			<th style = "background-color: grey">Duration</th>
 		</tr>
 
 
@@ -44,6 +46,8 @@
 					<td>  <%= link_to Attendee.find(subscription.subscribable_id).name, attendee_path(Attendee.find(subscription.subscribable_id)) %> </td>
 					<td>  <%= Attendee.find(subscription.subscribable_id).duid %> </td>
 					<td> <%= subscription.created_at.strftime("%I:%M %p") %> </td>
+					<td> <%= DateTime.parse(subscription.checkout_time).strftime('%H:%M %p') %> </td>
+					<td> <%= (( subscription.created_at - DateTime.parse(subscription.checkout_time) )/1.minute).round.abs %> minutes</td>
 				<% end %>
 
 			</tr>

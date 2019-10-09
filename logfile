@@ -1,0 +1,136 @@
+2019-09-17 08:38:07.461 EDT [76782] LOG:  listening on IPv6 address "::1", port 5432
+2019-09-17 08:38:07.462 EDT [76782] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-09-17 08:38:07.463 EDT [76782] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-09-17 08:38:07.473 EDT [76783] LOG:  database system was shut down at 2019-09-17 08:37:38 EDT
+2019-09-17 08:38:07.516 EDT [76782] LOG:  database system is ready to accept connections
+2019-09-17 08:39:46.720 EDT [76985] FATAL:  database "codeplus" does not exist
+2019-09-17 08:40:27.873 EDT [77063] LOG:  could not bind IPv6 address "::1": Address already in use
+2019-09-17 08:40:27.873 EDT [77063] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:40:27.873 EDT [77063] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-09-17 08:40:27.873 EDT [77063] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:40:27.873 EDT [77063] WARNING:  could not create listen socket for "localhost"
+2019-09-17 08:40:27.873 EDT [77063] FATAL:  could not create any TCP/IP sockets
+2019-09-17 08:40:27.873 EDT [77063] LOG:  database system is shut down
+2019-09-17 08:41:05.005 EDT [77136] FATAL:  could not open relation mapping file "global/pg_filenode.map": No such file or directory
+2019-09-17 08:41:05.007 EDT [77137] FATAL:  could not open relation mapping file "global/pg_filenode.map": No such file or directory
+2019-09-17 08:41:05.242 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:05.951 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:05.951 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:06.658 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:06.658 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:07.362 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:07.362 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:08.072 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:08.072 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:08.781 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:08.781 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:09.486 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:09.486 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:10.060 EDT [77149] LOG:  could not bind IPv6 address "::1": Address already in use
+2019-09-17 08:41:10.060 EDT [77149] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:41:10.060 EDT [77149] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-09-17 08:41:10.060 EDT [77149] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:41:10.060 EDT [77149] WARNING:  could not create listen socket for "localhost"
+2019-09-17 08:41:10.060 EDT [77149] FATAL:  could not create any TCP/IP sockets
+2019-09-17 08:41:10.060 EDT [77149] LOG:  database system is shut down
+2019-09-17 08:41:10.185 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:10.185 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:10.875 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:10.875 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:11.585 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:11.585 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:12.291 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:12.292 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:12.991 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:12.992 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:13.694 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:13.694 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:14.393 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:14.393 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:15.105 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:15.105 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:15.819 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:15.819 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:16.266 EDT [76787] LOG:  using stale statistics instead of current ones because stats collector is not responding
+2019-09-17 08:41:16.267 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:16.267 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:16.979 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:16.980 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:17.695 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:17.696 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:18.408 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:18.408 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:19.114 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:19.114 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:19.822 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:19.822 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:20.531 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:20.531 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:21.240 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:21.241 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:21.953 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:21.954 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:22.666 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:22.666 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:23.376 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:23.376 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:24.082 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:24.082 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:24.794 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:24.794 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:25.488 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:25.488 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:26.186 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:26.186 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:26.877 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:26.877 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:27.320 EDT [76787] LOG:  using stale statistics instead of current ones because stats collector is not responding
+2019-09-17 08:41:27.320 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:27.320 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:28.030 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:28.031 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:28.744 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:28.744 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:29.425 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:29.425 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:30.084 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:30.084 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:30.748 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:30.748 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:31.438 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:31.438 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:32.149 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:32.149 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:32.849 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:32.851 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:33.550 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:33.551 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:34.249 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:34.249 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:34.946 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:34.946 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:35.640 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:35.640 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:36.330 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:36.330 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:37.042 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:37.042 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:37.735 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:37.735 EDT [76788] LOG:  could not open temporary statistics file "pg_stat_tmp/global.tmp": No such file or directory
+2019-09-17 08:41:38.175 EDT [76787] LOG:  using stale statistics instead of current ones because stats collector is not responding
+2019-09-17 08:41:39.288 EDT [77210] LOG:  could not bind IPv6 address "::1": Address already in use
+2019-09-17 08:41:39.288 EDT [77210] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:41:39.288 EDT [77210] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-09-17 08:41:39.288 EDT [77210] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-09-17 08:41:39.288 EDT [77210] WARNING:  could not create listen socket for "localhost"
+2019-09-17 08:41:39.289 EDT [77210] FATAL:  could not create any TCP/IP sockets
+2019-09-17 08:41:39.289 EDT [77210] LOG:  database system is shut down
+2019-09-17 08:42:05.015 EDT [76782] LOG:  could not open file "postmaster.pid": No such file or directory
+2019-09-17 08:42:05.015 EDT [76782] LOG:  performing immediate shutdown because data directory lock file is invalid
+2019-09-17 08:42:05.015 EDT [76782] LOG:  received immediate shutdown request
+2019-09-17 08:42:05.015 EDT [76782] LOG:  could not open file "postmaster.pid": No such file or directory
+2019-09-17 08:42:05.016 EDT [76787] WARNING:  terminating connection because of crash of another server process
+2019-09-17 08:42:05.016 EDT [76787] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2019-09-17 08:42:05.016 EDT [76787] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2019-09-17 08:42:05.016 EDT [76788] LOG:  could not open temporary statistics file "pg_stat/global.tmp": No such file or directory
+2019-09-17 08:42:05.021 EDT [76782] LOG:  database system is shut down
