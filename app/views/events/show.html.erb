@@ -51,7 +51,11 @@
 					<% else %>
 					<td></td>
 					<% end %>
+					<% if subscription.checkout_time.present? %>
 					<td> <%= (( subscription.created_at - DateTime.parse(subscription.checkout_time) )/1.minute).round.abs %> minutes</td>
+					<% else %>
+					<td></td>
+					<% end %>
 				<% end %>
 
 			</tr>
