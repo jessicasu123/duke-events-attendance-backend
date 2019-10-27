@@ -1,8 +1,4 @@
-<div id="filterrific_results">
-
-  <div>
-    <%= page_entries_info events%>
-  </div>
+<!-- NOTE: HAVE REMOVED FILTERIFFIC LINES -->
 
   <table>
     <tr>
@@ -10,25 +6,25 @@
       <th>Event ID</th>
       <th>Date</th>
       <th>Hosts</th>
+      <th>Attendance Tracking</th>
       <!-- <th>Host Details</th> -->
-      <th>Number of Attendees</th>
+      <!-- <th>Number of Attendees</th>
       <th>Attendees</th>
-      <th>Delete</th>
+      <th>Delete</th> -->
 
     </tr>
+    <%# @events.each do |event| %>
     <% @events.each do |event| %>
       <tr> 
-        <td id="titlecells"> <%=event.title %></td>
-        <td> <%= event.eventid %></td>
-        <td> <%= event.created_at.strftime("%B %d, %Y") %></td>
-        <td><%= render event.hosts %></td>
-        <!-- <td><%= link_to 'Show Details' %></td> -->
-        <td> <%= event.attendees.count %></td>
-        <td><%= link_to 'Show Details', event_path(event) %></td>
-        <td><%= link_to 'Delete', event_path(event), method: :delete %></td>
+        <td id="titlecells"> <%= event["summary"] %><%#= event.title %></td>
+        <td> <%= event["id"] %> <%#= event.eventid %></td>
+        <td> <%# event.created_at.strftime("%B %d, %Y") %></td>
+        <!--<td><%#= render event.hosts %></td>-->
+        <td><%#= link_to 'Show Details' %></td>
+        <td><%= link_to 'Enable' %></td>
+        <!-- <td> <%#= event.attendees.count %></td>
+        <td><%# link_to 'Show Details', event_path(event) %></td>
+        <td><%# link_to 'Delete', event_path(event), method: :delete %></td> -->
       </tr>
    <% end %> 
   </table>
-</div>
-
-<%= will_paginate events%>

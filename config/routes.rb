@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
 
-  root 'home#welcome'
+  root 'events#index'
 
   post "/graphql", to: "graphql#execute"
   get 'events' => 'events#index'
