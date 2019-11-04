@@ -1,7 +1,7 @@
 class ShowEnvController < ApplicationController
     respond_to :html
     layout false
-    skip_filter :require_user
+    skip_before_action :require_user, raise: false
   
     def index
       #raise "hello"
