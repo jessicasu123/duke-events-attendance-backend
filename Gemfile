@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://adsweb-ci.oit.duke.edu/gems/'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
@@ -81,3 +82,7 @@ gem 'omniauth-shibboleth'
 
 #Search autocomplete
 gem 'jquery-rails'
+
+# Shib settings
+gem 'rack_authenticator'
+

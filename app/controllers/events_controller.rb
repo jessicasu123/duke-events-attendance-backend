@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 	      sanitize_params: true,
     ) || return
 		#@events = @filterrific.find.page(params[:page])
-		@test = get_my_events('ml138')
+		@test = get_my_events(current_user.netid)
 		@events = @test
 
 		respond_to do |format|
