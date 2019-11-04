@@ -61,5 +61,5 @@ Rails.application.configure do
 
   # Rack Authenticator
   # config.middleware.use RackAuthenticator::Configurable, 'ml138@duke.edu', []
-
+  config.middleware.use RackAuthenticator::Shib,{:scoped_netid_header => 'HTTP_UID', :group_list_header => 'HTTP_ISMEMBEROF', :extra_params =>['HTTP_DUDUKEID','HTTP_DISPLAYNAME']}
 end
