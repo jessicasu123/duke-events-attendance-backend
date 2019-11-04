@@ -1,7 +1,12 @@
 <html>
 <body>
-  Rack User: <%= debug request.env['authenticator.rack_user'] %>
-  <% request.env.each do |k,v| %>
+  Rack User: <%= debug @env['authenticator.rack_user'] %>
+  <% @env.each do |k,v| %>
     <pre><%= k %>: <%= v %></pre>
   <% end %>
+
+  <%= @user.inspect %>
+  <%= @user.netid %>
+  <%= @user.role %>
+  <%= Time.now.zone %>
 </body>
