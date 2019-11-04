@@ -86,3 +86,5 @@ gem 'jquery-rails'
 # Shib settings
 gem 'rack_authenticator'
 
+gem 'responders' 
+
