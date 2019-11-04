@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   root 'events#index'
+  get 'show_env', :to => "show_env#index"
 
   post "/graphql", to: "graphql#execute"
   get 'events' => 'events#index'
