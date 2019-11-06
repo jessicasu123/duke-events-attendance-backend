@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
     before_action :require_user
 
  def logout
-    reset_session
-    redirect_to "/Shibboleth.sso/Logout"  
+   reset_session
+   redirect_to "/Shibboleth.sso/Logout?return=https://shib.oit.duke.edu/cgi-bin/logout.pl"
  end
 
 protected
