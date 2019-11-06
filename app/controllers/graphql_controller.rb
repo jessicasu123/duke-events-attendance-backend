@@ -1,8 +1,8 @@
 class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token 
+  skip_before_action :require_user
+
   def execute
-
-
     if !request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'].blank?
       val = eval( request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'] )
       puts "VAL: #{val}"
