@@ -1,6 +1,6 @@
 class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token 
-  skip_before_action :require_user
+  skip_before_action :require_user, raise: false
 
   def execute
     if !request.headers['HTTP_X_AUTHENTICATED_INTROSPECTION'].blank?
