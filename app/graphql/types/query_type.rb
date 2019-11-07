@@ -74,6 +74,24 @@ module Types
       Event.find_by_eventid(eventid)
     end
 
+    field :get_active_events, [EventType], null: false do 
+      description "Returns all active events" 
+    end 
+
+    def get_active_events() 
+      active_array = Array.new  
+      @events = Event.all
+      @events.each do |event| 
+        if event.status == "active" 
+          active_array.push(event)
+        end 
+      end 
+      
+      active_array
+
+    end
+
+
     # field :get_duke_card_number, String, null: false do
     #   description "Returns duke card number by duke unique id"
     # end
@@ -129,6 +147,8 @@ module Types
       end
       [@time, Idmws.getName(attendeeid)]
     end
+
+
 
     # field :get_duid, String, null: false do 
     #   description "Returns duke unique id"
