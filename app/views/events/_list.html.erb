@@ -2,9 +2,8 @@
 
   <table>
     <tr>
-      <th>Event ID</th>
       <th>Title</th>
-      <th>Event Calendar ID</th>
+      <th>Event ID</th>
       <th>Date</th>
       <th>Hosts</th>
       <th>Attendance Tracking</th>
@@ -17,11 +16,6 @@
     <%# @events.each do |event| %>
     <% @events.each do |event| %>
       <tr> 
-        <% if event.id.present? %>
-          <td><%= event.id %> </td>
-        <% else %>
-          <td> </td>
-        <% end %>
         <td id="titlecells"> <%= event["summary"] %><%#= event.title %></td>
         <td> <%= event["id"] %> <%#= event.eventid %></td>
         <td> <%# event.created_at.strftime("%B %d, %Y") %></td>
