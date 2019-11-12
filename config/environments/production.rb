@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Shib
+  config.middleware.use RackAuthenticator::Shib,{:scoped_netid_header => 'HTTP_UID', :group_list_header => 'HTTP_ISMEMBEROF', :extra_params =>['HTTP_DUDUKEID','HTTP_DISPLAYNAME']}
 end

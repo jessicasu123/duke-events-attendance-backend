@@ -1,0 +1,10 @@
+<html>
+<body>
+  Rack User: <%= debug @env['authenticator.rack_user'] %>
+  <% @env.each do |k,v| %>
+    <pre><%= k %>: <%= v %></pre>
+  <% end %>
+
+  <%= @user.inspect %>
+  <%= Time.now.zone %>
+</body>

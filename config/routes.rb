@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   end
 
   root 'events#index'
+  get 'show_env', :to => "show_env#index"
+  get 'logout' => 'application#logout', :as => :logout
 
   post "/graphql", to: "graphql#execute"
   get 'events' => 'events#index'

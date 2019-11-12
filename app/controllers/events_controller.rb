@@ -13,17 +13,14 @@ class EventsController < ApplicationController
 	      available_filters: [:search_query, :with_eventid, :with_title],
 	      sanitize_params: true,
     ) || return
-		#@events = @filterrific.find.page(params[:page])
-		#@test = get_json_events('ml138')
-		#@events = @test
 		@database_events = Event.all
 		@events = Array.new()
 		@database_events.each do |event|
-			#if event.hosts.pluck(:hostid).include?(current_user.netid)
-			if event.hosts.pluck(:hostid).include?("ahw26")
+			if event.hosts.pluck(:hostid).include?(current_user.netid)
 				@events << event
 			end
 		end
+
 
 		respond_to do |format|
 	      format.html
@@ -121,6 +118,5 @@ class EventsController < ApplicationController
   		@event.destroy
   		redirect_to events_path
 	end
-
 
 end
