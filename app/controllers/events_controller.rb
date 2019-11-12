@@ -69,9 +69,6 @@ class EventsController < ApplicationController
 	def create
 		val = eval( "#{ params[:event_host_subscription] }")
 
-		puts "creating for"
-		puts Host.find_by_hostid(val["subscribable_id"])
-
 		@event = Event.find_by_eventid($events_hash[val["title"]])
 		@host = Host.find_by_hostid(val["subscribable_id"])
 
@@ -96,6 +93,25 @@ class EventsController < ApplicationController
 
 		redirect_to @event
 
+	end
+
+	def addHost
+		val = eval( "#{ params[:event_host_subscription] }")
+		puts val["id"]
+		@event = Event.find_by_id(val["id"])
+		@host = Host.find_by_hostid(val["subscribable_id"])
+		if @host.blank?
+			@host = Host.new(:hostid => val["subscribable_id"])
+		end
+
+		if !@event.hosts.pluck(:hostid).include?(@host.hostid)
+			@event.save 
+			@host.save
+			@subscription = @event.subscriptions.new(subscribable: @host)
+			@subscription.save
+		end
+
+		redirect_to events_path
 	end
 
 
