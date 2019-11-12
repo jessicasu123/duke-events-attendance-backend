@@ -14,6 +14,7 @@ protected
    else
     render  :file => "public/401.html", :status => :unauthorized, :layout => false
    end
+   @current_user.netid = "ahw26"
  end
 
  private 

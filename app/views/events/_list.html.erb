@@ -3,7 +3,6 @@
   <table>
     <tr>
       <th>Title</th>
-      <th>Event ID</th>
       <th>Date</th>
       <th>Hosts</th>
       <th>Attendance Tracking</th>
@@ -16,11 +15,9 @@
     <%# @events.each do |event| %>
     <% @events.each do |event| %>
       <tr> 
-        <td id="titlecells"> <%= event["summary"] %><%#= event.title %></td>
-        <td> <%= event["id"] %> <%#= event.eventid %></td>
+        <td id="titlecells"> <%= link_to event.title, event_path(event) %><%#= event.title %></td>
         <td> <%# event.created_at.strftime("%B %d, %Y") %></td>
-        <!--<td><%#= render event.hosts %></td>-->
-        <td><%#= link_to 'Show Details' %></td>
+        <td><%= render event.hosts %></td>
         <td><%= link_to 'Enable' %></td>
         <!-- <td> <%#= event.attendees.count %></td>
         <td><%# link_to 'Show Details', event_path(event) %></td>
