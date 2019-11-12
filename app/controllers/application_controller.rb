@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 protected
  def require_user
    rack_user = request.env['authenticator.rack_user']
+   puts rack_user
    if(rack_user.netid.present?)
     @current_user = rack_user
    else
