@@ -47,7 +47,7 @@
 					<td>  <%= Attendee.find(subscription.subscribable_id).duid %> </td>
 					<td> <%= subscription.created_at.strftime("%I:%M %p") %> </td>
 					<% if subscription.checkout_time.present? %>
-					<td> <%= DateTime.parse(subscription.checkout_time).strftime('%H:%M %p') %> </td>
+					<td> <%= DateTime.parse(subscription.checkout_time).strftime('%I:%M %p') %> </td>
 					<% else %>
 					<td></td>
 					<% end %>
