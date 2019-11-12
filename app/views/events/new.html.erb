@@ -24,7 +24,7 @@ $events_hash = Hash.new
 @events_array.each do |event| 
     if event["submitted_by"] != nil
     	#if event.hosts.pluck(:hostid).include?(current_user.netid)
-		if event["submitted_by"][0].strip() == current_user.netid
+		if event["submitted_by"][0].strip() == "wynn0003" #current_user.netid
 			$events_hash[event["summary"].strip()] = event["id"].strip()
 		end
 	end
