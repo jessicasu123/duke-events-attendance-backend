@@ -16,7 +16,7 @@
       <tr> 
         <td id="titlecells"> <%= link_to event.title, event_path(event) %><%#= event.title %></td>
         <td><%= render event.hosts %></td>
-        <td><%= link_to 'Add Hosts' %></td> <!--, edit_event_path(@event) %>--></td>
+        <td><%= link_to 'Add Hosts', edit_event_path(event) %></td> <!--, edit_event_path(@event) %>--></td>
         <!-- <td> <%#= event.attendees.count %></td>
         <td><%# link_to 'Show Details', event_path(event) %></td>
         <td><%# link_to 'Delete', event_path(event), method: :delete %></td> -->

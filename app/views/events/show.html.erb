@@ -17,12 +17,6 @@
 </p>
 
 <p>
-<strong>Start Check-In Time:</strong>
-	<%= @event.created_at.strftime("%I:%M %p") %> 
-</p>
-
-
-<p>
 <%= link_to "Download CSV", event_path(format: "csv") %>
 </p>
 </div>
@@ -36,7 +30,7 @@
 			<th style = "background-color: grey">DUID</th>
 			<th style = "background-color: grey">Check-in Time</th>
 			<th style = "background-color: grey">Check-out Time</th>
-			<th style = "background-color: grey">Duration</th>
+			<!--<th style = "background-color: grey">Duration</th>-->
 		</tr>
 
 
@@ -51,11 +45,11 @@
 					<% else %>
 					<td></td>
 					<% end %>
-					<% if subscription.checkout_time.present? %>
-					<td> <%= (( subscription.created_at - DateTime.parse(subscription.checkout_time) )/1.minute).round.abs %> minutes</td>
-					<% else %>
-					<td></td>
-					<% end %>
+					<%# if subscription.checkout_time.present? %>
+					<!--<td> <%#= (( subscription.created_at - DateTime.parse(subscription.checkout_time) )/1.minute).round.abs %> minutes</td>
+					<%# else %>
+					<td></td>-->
+					<%# end %>
 				<% end %>
 
 			</tr>
