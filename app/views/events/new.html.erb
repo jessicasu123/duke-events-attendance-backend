@@ -2,6 +2,14 @@
 require 'json'
 require 'uri'
 
+@database_events = Event.all
+@database_events.each do |event|
+	if event.hosts.pluck(:hostid).include?(@myNetID)
+		puts event
+		@my_events << { "id" => event.eventid, "summary" => event.title } #this is a different type than line 120...
+	end
+end
+
 url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple&local=true"
 uri = URI.parse(url)
 http = Net::HTTP.new(uri.host, uri.port)
@@ -14,10 +22,12 @@ doc = JSON.parse(response)
 $events_hash = Hash.new
 
 @events_array.each do |event| 
-    #puts event["summary"].strip()
-    #@event_titles.push(event["summary"].strip())
-    #event_ids.push(event["id"])
-    $events_hash[event["summary"].strip()] = event["id"].strip()
+    if event["submitted_by"] != nil
+    	#if event.hosts.pluck(:hostid).include?(current_user.netid)
+		if event["submitted_by"][0].strip() == "asb63"
+			$events_hash[event["summary"].strip()] = event["id"].strip()
+		end
+	end
 end
 @title_array_from_hash = $events_hash.keys.sort %>
 
@@ -40,7 +50,7 @@ end
 	<h2><%= f.label "EVENT" %></h2>
 	  <%= f.collection_select :title, @title_array_from_hash, :to_s, :to_s, {:prompt => 'Find your event by title'}, {:class=>'collection', required: true} %> <br>
 	  <h2><%= f.label "HOST ID"%></h2>
-	  <%= f.text_field :subscribable_id, :class=>'text-field', :required=>true, :minlength => 3, :maxlength => 5 %> <br>
+	  <%= hidden_field_tag "event_host_subscription[subscribable_id]", "ahw26" %>
 	  <%= f.submit "Make Me A Host", :class=>'button' %>
 	<% end  %>
 </div>
