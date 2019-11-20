@@ -24,11 +24,14 @@
 		
 		<% @attendee.events.each do |event| %> 
 			<tr> 
-				<td> <%= event.title %></td> 
-				<td> <%= event.created_at.strftime("%B %d, %Y") %></td> 
-
+				<% if event.hosts.pluck(:hostid).include?(current_user.netid) %>
+					<td> <%= event.title %></td> 
+					<td> <%= event.created_at.strftime("%B %d, %Y") %></td> 
+				<% end %>
 			</tr>
 		<% end %>  
+
+		<!-- potentially unnecessary -->
 		
 		<% @attendee.subscriptions.each do |subscription| %> 
 			<tr> 
