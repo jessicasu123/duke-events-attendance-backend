@@ -48,8 +48,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_133809) do
   create_table "subscriptions", force: :cascade do |t|
     t.integer "subscribable_id"
     t.string "subscribable_type"
-    t.integer "subscriber_id"
-    t.string "subscriber_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "event_id"
