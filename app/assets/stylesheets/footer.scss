@@ -23,19 +23,18 @@ body {
 
 .ack{
 font-family: "Open Sans", sans-serif;
-	margin: 15px 515px 0px 0px;
 	postion: relative;
+	padding-left: 200px;
 }
 
 .footer-name {
-
+padding-left: 215px;
 	postion: relative;
 	padding-top: 20px;
 	padding-right: 20px;
     color: #ffd960;
     font-weight: 500;
     font-family: "Open Sans", sans-serif;
-    margin: 130px 500px 0px 0px;
     letter-spacing: 2px;
     font-size: 24px;
 }
@@ -45,11 +44,17 @@ font-family: "Open Sans", sans-serif;
 	padding-left: 300px;
 }
 
-.duke-footer {
+.duke-footer-left {
+    margin-top: 20px;
+    text-align: center;
+    float: left;
+}
+.duke-footer-right {
     margin-top: 20px;
     text-align: center;
     padding-left: 300px;
     padding-bottom: 10px;
+
 
 }
 
