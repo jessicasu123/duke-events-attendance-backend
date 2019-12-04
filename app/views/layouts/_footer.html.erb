@@ -1,13 +1,38 @@
+
+<head> 
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Merriweather|Open+Sans|Roboto:300,400&display=swap" rel="stylesheet">
+</head>
+
+
 <div id="push"></div>
-<footer class = "footer navbar-fixed-bottom">
-	<div class="container">
-		<nav>
-			<ul>
-				<li><%= link_to "Contact Us", new_contact_path %></li>
-				<li><%= link_to "Privacy Policy", privacy_path %></li>
-				<li><%= link_to "Terms of Use", terms_path %></li>
-				<li><%= link_to "Duke Code+", codeplus_path %></li>
-			</ul>
-		</nav>
+
+<div class="footer";>
+
+  <div class="container">
+        <h3 class="footer-name">Duke Event Attendance App</h3>
+  </div>
+ 
+
+    <div class="duke-footer">
+
+      <div class>
+        <a href="https://duke.edu"><%= image_tag("dlogo.png",  size: "120x60", :alt => "Duke") %></a>
+      </div>
+      
+
+      <div class="social-links">
+
+        <a href="https://www.facebook.com/DukeUniv"><%= image_tag("fblogo.png",  size: "30x30", :alt => "fb") %></a>
+        <a href="https://twitter.com/dukeu"><%= image_tag("twitterlogo.png",  size: "30x30", :alt => "twt") %></a>
+        <a href="https://www.instagram.com/dukeuniversity/"><%= image_tag("iglogo.png",  size: "30x30", :alt => "ig") %></a>
+        <a href="https://www.youtube.com/user/Duke"><%= image_tag("ytlogo.png",  size: "30x30", :alt => "yt") %></a>
+      </div>
+      
+      <div class="duke-contact">Duke University &nbsp;&nbsp;
+        Durham, NC 27708<br>
+        (919) 684-8111
+      </div>
+
 	</div>
-</footer>
+
+</div>

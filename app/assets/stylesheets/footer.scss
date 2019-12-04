@@ -1,0 +1,47 @@
+// Place all the styles related to the Footer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.38857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.footer {
+    background-color: #001a57;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 12px;
+   	
+}
+
+
+.footer-name {
+    color: #ffd960;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+    margin: 130px 500px 20px 500px;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+.duke-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links{
+	margin-top: 20px;
+    text-align: center;
+
+}
+
+.duke-contact{
+	margin-top: 20px;
+    text-align: center;
+ }
