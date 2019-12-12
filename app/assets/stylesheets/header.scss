@@ -2,15 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.banner {
-    background-color: #001a57;
-    color: #ffffff;
+.ban {
     font-family: "Open Sans", sans-serif;
-    font-weight: 900;
+    background-color: #012169;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 50px;
+    font-weight: 100;
     letter-spacing: 1px;
-    font-size: 12px;
-   	margin-bottom: 0px;
-   	position: fixed;
+    font-size: 20px;
     top: 0;
     width: 100%;
+}
+
+.ban h1{
+    font-family: "Roboto";
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
 }
