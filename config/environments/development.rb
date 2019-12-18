@@ -60,6 +60,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Rack Authenticator
-  #config.middleware.use RackAuthenticator::Configurable, 'ahw26@duke.edu', []
+  #config.middleware.use RackAuthenticator::Configurable, 'js803@duke.edu', []
   config.middleware.use RackAuthenticator::Shib,{:scoped_netid_header => 'HTTP_UID', :group_list_header => 'HTTP_ISMEMBEROF', :extra_params =>['HTTP_DUDUKEID','HTTP_DISPLAYNAME']}
 end

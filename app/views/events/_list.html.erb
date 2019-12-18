@@ -3,6 +3,7 @@
   <table>
     <tr>
       <th>Title</th>
+      <th>Host Names</th>
       <th>Hosts</th>
       <th>Edit Event</th>
       <!-- <th>Host Details</th> -->
@@ -15,6 +16,7 @@
     <% @events.each do |event| %>
       <tr> 
         <td id="titlecells"> <%= link_to event.title, event_path(event) %><%#= event.title %></td>
+        <td><%= %></td>
         <td><%= render event.hosts %></td>
         <td><%= link_to 'Add Hosts', edit_event_path(event) %></td> <!--, edit_event_path(@event) %>--></td>
         <!-- <td> <%#= event.attendees.count %></td>

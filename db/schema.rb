@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_133809) do
+ActiveRecord::Schema.define(version: 2019_12_18_071028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 2019_09_17_133809) do
     t.string "title"
     t.string "status"
     t.string "checkintype"
+    t.string "hostLat"
+    t.string "hostlat"
+    t.string "hostlong"
   end
 
   create_table "hosts", force: :cascade do |t|

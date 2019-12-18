@@ -41,5 +41,21 @@ class Idmws
 		username #return
 	end
 
+	def self.getNameFromNetID(id)
+		
+		url = "https://idms-web-ws.oit.duke.edu/idm-ws/user/findByIdentifier?identifierAttribute=USR_UDF_UID&identifier=#{id}&attributes=USR_FIRST_NAME,USR_LAST_NAME"
+		uri = URI.parse(url)
+		http = Net::HTTP.new(uri.host, uri.port)
+		http.use_ssl = true 
+		request = Net::HTTP::Get.new(uri.request_uri)
+		request.basic_auth(ENV["IDMS_USER"], ENV["IDMS_PASSWORD"])
+		response = http.request(request).body
+		doc = JSON.parse(response)
+		user_name = doc["userQueryResult"]["users"][0]["attributes"]["USR_FIRST_NAME"][0] + " " + doc["userQueryResult"]["users"][0]["attributes"]["USR_LAST_NAME"][0]
+		puts user_name 
+
+		user_name
+	end
+
 
 end

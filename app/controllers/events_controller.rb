@@ -70,7 +70,7 @@ class EventsController < ApplicationController
 		@host = Host.find_by_hostid(val["subscribable_id"])
 
 		if @event.blank? #doesn't exist
-			@event = Event.new(:eventid => $events_hash[val["title"]], :title => val["title"], :status => "inactive", :checkintype => "unspecified")
+			@event = Event.new(:eventid => $events_hash[val["title"]], :title => val["title"], :status => "inactive", :checkintype => "unspecified", :hostlat => "0.0", :hostlong => "0.0")
 		else
 			#throw error
 		end
@@ -96,9 +96,12 @@ class EventsController < ApplicationController
 		val = eval( "#{ params[:event_host_subscription] }")
 		puts val["id"]
 		@event = Event.find_by_id(val["id"])
-		@host = Host.find_by_hostid(val["subscribable_id"])
+		@host = Host.find_by_hostid(val["subscribable_id"]) 
+
+
 		if @host.blank?
 			@host = Host.new(:hostid => val["subscribable_id"])
+			
 		end
 
 		if !@event.hosts.pluck(:hostid).include?(@host.hostid)

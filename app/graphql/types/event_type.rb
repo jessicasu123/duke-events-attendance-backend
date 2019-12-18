@@ -7,5 +7,7 @@ module Types
 		field :title, String, null:false
 		field :status, String, null:false
 		field :checkintype, String, null:false
+		field :hostlat, String, null:false
+		field :hostlong, String, null:false
 	end
 end
