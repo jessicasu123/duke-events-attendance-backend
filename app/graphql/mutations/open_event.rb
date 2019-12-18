@@ -1,6 +1,6 @@
 module Mutations
 	class OpenEvent < GraphQL::Schema::Mutation
-  		description "open event for check in with type"
+  		description "open event for check in with type and host location (lat & long)"
 
   		argument :eventid, String, required: true
   		argument :checkintype, String, required: true
