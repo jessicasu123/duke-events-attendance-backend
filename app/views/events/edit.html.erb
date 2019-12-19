@@ -14,7 +14,7 @@
 	<%= form_for :event_host_subscription, url: "/events/#{@event.id}/addHost" do |f| %>
 	  <%= hidden_field_tag "event_host_subscription[id]", @event.id %>
 	  <h2><%= f.label "HOST ID"%></h2>
-	  <%= f.text_field :subscribable_id, :class=>'text-field-edit', :required=>true, :minlength => 3, :maxlength => 5 %>
+	  <%= f.text_field :subscribable_id, :class=>'text-field-edit', :required=>true, :minlength => 3, :maxlength => 7 %>
 	  <%= f.submit "Add Host", :class=>'button-edit' %>
 	<% end  %>
 </div>

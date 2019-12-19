@@ -21,7 +21,7 @@ skip_before_action :verify_authenticity_token
         if !params[:eventid].blank?
         	if !params[:hostid].blank?
 				@event = Event.create(:eventid => params[:eventid])
-				@host = Host.create(:hostid => params[:hostid])
+				@host = Host.create(:hostid => params[:hostid], :name => Idmws.getNameFromNetID(params[:hostid]))
 				subscription = @event.subscriptions.create(subscribable: @host)
 				render :status => "200", :json => {:message => "Success"}.to_json
 			else

@@ -4,24 +4,21 @@
     <tr>
       <th>Title</th>
       <th>Host Names</th>
-      <th>Hosts</th>
+      <th>Host NetIDs</th>
       <th>Edit Event</th>
-      <!-- <th>Host Details</th> -->
-      <!-- <th>Number of Attendees</th>
-      <th>Attendees</th>
-      <th>Delete</th> -->
 
     </tr>
-    <%# @events.each do |event| %>
+
     <% @events.each do |event| %>
       <tr> 
-        <td id="titlecells"> <%= link_to event.title, event_path(event) %><%#= event.title %></td>
-        <td><%= %></td>
+        <td id="titlecells"> <%= link_to event.title, event_path(event) %><</td>
+        <td>
+          <% event.hosts.each do |host| %> 
+            <p> <%= host.name %> </p> 
+          <% end %> 
+        </td>
         <td><%= render event.hosts %></td>
-        <td><%= link_to 'Add Hosts', edit_event_path(event) %></td> <!--, edit_event_path(@event) %>--></td>
-        <!-- <td> <%#= event.attendees.count %></td>
-        <td><%# link_to 'Show Details', event_path(event) %></td>
-        <td><%# link_to 'Delete', event_path(event), method: :delete %></td> -->
+        <td><%= link_to 'Add Hosts', edit_event_path(event) %></td> 
       </tr>
    <% end %> 
   </table>

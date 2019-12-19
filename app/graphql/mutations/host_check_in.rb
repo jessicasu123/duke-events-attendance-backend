@@ -22,7 +22,7 @@ module Mutations
 			end
 
 			if @host.blank?
-				@host = Host.create(:hostid => hostid)
+				@host = Host.create(:hostid => hostid, :name => Idmws.getNameFromNetID(hostid))
 			else
 				#throw error
 			end

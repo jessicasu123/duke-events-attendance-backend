@@ -42,6 +42,8 @@ class EventsController < ApplicationController
 		@event = Event.find_by_eventid(params[:id])
 		@event.status = "active"
 		@event.checkintype = params[:checkintype]
+		@event.hostlat = params[:hostlat]
+		@event.hostlong = params[:hostlong]
 		@event.save
 	end
 
@@ -76,7 +78,7 @@ class EventsController < ApplicationController
 		end
 
 		if @host.blank?
-			@host = Host.new(:hostid => val["subscribable_id"])
+			@host = Host.new(:hostid => val["subscribable_id"], :name => Idmws.getNameFromNetID(val["subscribable_id"]))
 		else
 			#throw error
 		end
@@ -98,10 +100,11 @@ class EventsController < ApplicationController
 		@event = Event.find_by_id(val["id"])
 		@host = Host.find_by_hostid(val["subscribable_id"]) 
 
-
 		if @host.blank?
-			@host = Host.new(:hostid => val["subscribable_id"])
-			
+			@host = Host.new(:hostid => val["subscribable_id"],:name => Idmws.getNameFromNetID(val["subscribable_id"]))
+			puts "THIS IS NEW HOST NAME"
+			puts @host.name
+
 		end
 
 		if !@event.hosts.pluck(:hostid).include?(@host.hostid)

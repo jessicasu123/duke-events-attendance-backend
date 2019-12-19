@@ -43,7 +43,7 @@ class Idmws
 
 	def self.getNameFromNetID(id)
 		
-		url = "https://idms-web-ws.oit.duke.edu/idm-ws/user/findByIdentifier?identifierAttribute=USR_UDF_UID&identifier=#{id}&attributes=USR_FIRST_NAME,USR_LAST_NAME"
+		url = "https://idms-web-ws.oit.duke.edu/idm-ws/user/findByIdentifier?identifierAttribute=USR_UDF_UID&identifier=#{id}&attributes=USR_UDF_UID,USR_FIRST_NAME,USR_LAST_NAME"
 		uri = URI.parse(url)
 		http = Net::HTTP.new(uri.host, uri.port)
 		http.use_ssl = true 
