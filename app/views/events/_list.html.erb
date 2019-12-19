@@ -11,10 +11,12 @@
 
     <% @events.each do |event| %>
       <tr> 
-        <td id="titlecells"> <%= link_to event.title, event_path(event) %><</td>
+        <td id="titlecells"> <%= link_to event.title, event_path(event) %></td>
         <td>
           <% event.hosts.each do |host| %> 
-            <p> <%= host.name %> </p> 
+            <ul class="comma-list"> 
+              <li> <%= host.name %> </li>
+            </ul> 
           <% end %> 
         </td>
         <td><%= render event.hosts %></td>
