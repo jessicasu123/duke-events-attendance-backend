@@ -1,0 +1,5 @@
+public static LinkedListNode addLists(LinkedListNode n1, LinkedListNode n2){
+	int counter1 = 0;
+	int counter2 = 0;
+	
+}
