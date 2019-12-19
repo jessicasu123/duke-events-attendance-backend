@@ -25,4 +25,4 @@ RUN chmod -R 777 log
 
 USER rubyuser
 
-CMD ["puma","-C","config/puma.rb"]
+CMD ["bundle","exec","puma","-C","config/puma.rb"]
