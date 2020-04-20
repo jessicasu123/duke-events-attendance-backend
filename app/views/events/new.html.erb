@@ -10,7 +10,9 @@ require 'uri'
 	end
 end
 
-url = "https://calendar.duke.edu/events/index.json?&future_days=90&feed_type=simple&local=true"
+#url = "https://calendar-test.duke.edu/events/index.json?&future_days=90&feed_type=simple&local=true"
+#BOTTOM URL IS FOR TESTING/DEV; COMMENT FOR DEPLOYMENT
+url = "https://calendar-test.oit.duke.edu/events/index.json?&future_days=90&feed_type=simple&local=true"
 uri = URI.parse(url)
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
